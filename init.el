@@ -21,7 +21,12 @@
 (require 'init-highlight)
 (require 'init-ui)
 
+; learning elisp
 (require 'dove)
+
+; set default text coding system
+(setq default-buffer-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
 
 (if (display-graphic-p)
 	(setq ring-bell-function 'ignore))
