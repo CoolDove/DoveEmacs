@@ -16,11 +16,16 @@
 
 (require 'init-evil)
 (require 'init-tools)
+(require 'init-pyim)
 
 (require 'init-highlight)
 (require 'init-ui)
 
 (require 'dove)
 
+(if (display-graphic-p)
+	(setq ring-bell-function 'ignore))
+
+(server-start)
 
 ;;************************
