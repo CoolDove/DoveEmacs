@@ -50,7 +50,12 @@
 (evil-define-key '(normal visual) 'global (kbd "C-b") 'switch-to-buffer)
 (evil-define-key '(normal visual) 'global (kbd "C-u") 'switch-to-prev-buffer)
 (evil-define-key '(normal visual) 'global (kbd "C-i") 'switch-to-next-buffer)
-(evil-define-key '(normal visual) 'global (kbd "?")   'youdao-dictionary-search-at-point-tooltip)
+
+(if (display-graphic-p)
+	(evil-define-key '(normal visual) 'global (kbd "?")   'youdao-dictionary-search-at-point-tooltip)
+    (evil-define-key '(normal visual) 'global (kbd "?")   'youdao-dictionary-search-at-point+))
+
+
 
 ;(defun dove-auto-save-after-edit ()
   ;(add-hook 'evil-insert-state-exit-hook 'save-buffer)

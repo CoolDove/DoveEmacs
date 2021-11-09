@@ -11,8 +11,8 @@
 ;; theme things
 (use-package gruvbox-theme
   :init   (load-theme 'gruvbox-dark-soft t)
-  :ensure t
-)
+  :ensure t)
+
 
 (use-package smart-mode-line
   :init
