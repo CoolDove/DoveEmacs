@@ -10,6 +10,9 @@
 (evil-define-key '(normal visual) 'global (kbd "M-j") 'evil-scroll-line-down)
 (evil-define-key '(normal visual) 'global (kbd "M-k") 'evil-scroll-line-up)
 
+; split a new line
+(evil-define-key '(normal visual) 'global (kbd "K") '(lambda () (interactive) (insert-char 10 1)))
+
 ;; swtich between windows
 (evil-define-key '(normal visual) 'global (kbd "M-w j") 'evil-window-down)
 (evil-define-key '(normal visual) 'global (kbd "M-w k") 'evil-window-up)
@@ -35,9 +38,10 @@
 
 ;; f number
 (evil-define-key '(normal visual) 'global (kbd "<f2>")  'lsp-rename)
-(evil-define-key '(normal visual) 'global (kbd "<f3>")  'describe-variable)  ;@Temp
-(evil-define-key '(normal visual) 'global (kbd "C-<f3>")  'describe-function);@Temp
-(evil-define-key '(normal visual) 'global (kbd "<f4>")  'eshell)
+
+;; FIXME: later, let these two keys automatically check mode
+(evil-define-key '(normal visual) 'global (kbd "<f3>")  'describe-variable)   ;@Temp
+(evil-define-key '(normal visual) 'global (kbd "C-<f3>")  'describe-function) ;@Temp
 
 (evil-define-key '(normal visual) 'global (kbd "<f5>")  'eval-region)
 
@@ -53,10 +57,10 @@
 
 (if (display-graphic-p)
 	(evil-define-key '(normal visual) 'global (kbd "?")   'youdao-dictionary-search-at-point-tooltip)
-    (evil-define-key '(normal visual) 'global (kbd "?")   'youdao-dictionary-search-at-point+))
+    (evil-define-key '(normal visual) 'global (kbd "?")   'youdao-dictionary-search-at-point+)
+)
 
-
-
+;auto save after exiting from Insert Mode, but it's terribly slow
 ;(defun dove-auto-save-after-edit ()
   ;(add-hook 'evil-insert-state-exit-hook 'save-buffer)
 ;)
