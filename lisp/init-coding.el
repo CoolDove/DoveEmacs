@@ -19,6 +19,8 @@
              :hook ((c++-mode      . lsp-deferred)
                     (csharp-mode   . lsp-deferred))
              :commands lsp
+			 :config (setq lsp-enable-symbol-highlighting nil)
+			         ;(lsp-semantic-tokens-mode)
 )
 
 (provide 'init-coding)

@@ -12,9 +12,6 @@
         c-syntactic-indentation nil
         indent-tabs-mode nil))
 
-
 (add-hook 'c-mode-common-hook 'c-mod-indent-adjust)
 
 (provide 'init-indent)
-
-

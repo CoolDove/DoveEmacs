@@ -18,8 +18,9 @@
 (require 'init-tools)
 (require 'init-pyim)
 
-(require 'init-highlight)
 (require 'init-ui)
+
+(require 'init-highlight)
 
 ; learning elisp
 (require 'dove)
@@ -28,9 +29,8 @@
 (setq default-buffer-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-(if (display-graphic-p)
-	(setq ring-bell-function 'ignore))
+; disable beeping
+(setq ring-bell-function 'ignore)
 
 (server-start)
-
 ;;************************

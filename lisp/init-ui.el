@@ -9,20 +9,22 @@
 					charset (font-spec :family "Microsoft Yahei Mono" :size 16))))
 
 ;; theme things
-(use-package gruvbox-theme
-  :init   (load-theme 'gruvbox-dark-soft t)
-  :ensure t)
-
+(if (display-graphic-p)
+	(use-package gruvbox-theme
+		:init   (load-theme 'gruvbox-dark-soft t)
+		:ensure t)
+)
 
 (use-package smart-mode-line
   :init
 	  (if (display-graphic-p)
 		  (setq sml/theme 'respectful)
-		  (setq sml/theme 'dark))
+		  (setq sml/theme 'light))
       (setq sml/no-confirm-load-theme  t)
       (sml/setup)
 )
 
+; cant work with company
 ;(use-package indent-guide
   ;:after  prog-mode
   ;:ensure t
@@ -43,6 +45,7 @@
 (use-package emacs
   :config (setq display-line-numbers-type    'relative)
           (global-display-line-numbers-mode  t)
+		  (show-paren-mode)
 )
 
 (provide 'init-ui)
