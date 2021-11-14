@@ -1,5 +1,3 @@
-(setq display-line-numbers-type 'relative)
-(setq global-display-line-numbers-mode t)
 (setq inhibit-startup-screen t)
 (setq make-backup-files nil)
 

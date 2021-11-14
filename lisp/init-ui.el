@@ -38,14 +38,9 @@
   :ensure t
   :after  (ivy)
   :hook   (prog-mode . ivy-posframe-mode)
-  :config
-          (setq ivy-posframe-display-function-alist '((t . ivy-posframe-display-at-frame-center)))
+  :config (setq ivy-posframe-display-function-alist '((t . ivy-posframe-display-at-frame-center)))
 )
 
-(use-package emacs
-  :config (setq display-line-numbers-type    'relative)
-          (global-display-line-numbers-mode  t)
-		  (show-paren-mode)
-)
+(require 'dove-linum)
 
 (provide 'init-ui)
