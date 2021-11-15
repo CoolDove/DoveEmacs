@@ -6,7 +6,8 @@
 (if (display-graphic-p)
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
         (set-fontset-font (frame-parameter nil 'font)
-					charset (font-spec :family "Microsoft Yahei Mono" :size 16))))
+						  charset (font-spec :family "Microsoft Yahei Mono" :size 16)))
+)
 
 ;; theme things
 (if (display-graphic-p)
@@ -42,5 +43,6 @@
 )
 
 (require 'dove-linum)
+(dove-linum-mode)
 
 (provide 'init-ui)

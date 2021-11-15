@@ -24,10 +24,11 @@
 (require 'init-tools)
 (require 'init-pyim)
 
+(require 'dove-term-env)
+
 (require 'init-ui)
 (require 'init-highlight)
 
-(require 'dove-term-env)
 
 ; learning elisp
 ; (require 'dove)

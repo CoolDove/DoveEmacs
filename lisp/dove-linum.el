@@ -13,40 +13,66 @@
   "linum highlight face"
   :group 'char-face
 )
+(defface linum-highlight-evil-marker
+  '((t (:background "yellow" :foreground "black")))
+  "linum highlight face"
+  :group 'char-face
+)
 
 (defun dove-evil-mode-string ()
-  (cond ((evil-insert-state-p)  "@")
+  (cond ((evil-insert-state-p)  "!")
 		((evil-visual-state-p)  "~")
 		((evil-replace-state-p) "#")
 		((evil-normal-state-p)  ">")
 		(t " "))
 )
-
+ 
 (defun dove-evil-register-string ()
-  (let ((num-len (length (number-to-string (line-number-at-pos (point-max)))))
-		(pre-space (make-string (- (length (number-to-string (line-number-at-pos (point-max)))) 1) 32)))
+  (let ((num-len         (length (number-to-string (line-number-at-pos (point-max)))))
+		(register-prefix (make-string (- (length (number-to-string (line-number-at-pos (point-max)))) 1) ?-)))
 	(if evil-this-register
-	    (concat pre-space (format "#%s" (char-to-string evil-this-register)))
+	    (concat register-prefix (format "#%s" (char-to-string evil-this-register)))
 		"-")
-	)
+  )
 )
 
-;; finish this
-(defun dove-line-evil-mark (lnum)
-  "get the line mark"
+(defun dove-mark-char-p (char)
+  (or (and (>= char 0) (<= char 9)) (and (>= char ?a) (<= char ?z)) (and (>= char ?A) (<= char ?Z)))
+)
+
+(defun dove-line-evil-mark-string (lnum)
+  "get the line marker string"
+  (let ((output ""))
+	(dolist (item evil-markers-alist)
+		(let ((mchar  (car item))
+			  (marker (cdr item)))
+		  (when (and (dove-mark-char-p mchar)
+					 (markerp marker)
+					 (eql lnum (line-number-at-pos (marker-position marker))))
+		        (setq output (format "#%s" (char-to-string mchar)))
+		  )
+		)
+	)
+	(when (not (equal output ""))
+	  (let ((mark-prefix (make-string (- (length (number-to-string (line-number-at-pos (point-max)))) 1) ?*)))
+		(setq output (concat mark-prefix output))
+	  )
+	)
+	output
+  )
 )
 
 (defun dove-linum (line-number)
-  (let ((distance (- line-number dove-current-line))
+  (let ((distance  (- line-number dove-current-line))
 		(df-string (format "%%%ds" (length (number-to-string (line-number-at-pos (point-max)))))))
 	(if (eql distance 0)
 		;; current line
-		(cond (evil-this-register ;; register mode
+	(cond (evil-this-register ;; register mode
 			    (propertize
 					(dove-evil-register-string)
 					'face 'linum-highlight-evil-register))
 
-              (t                  ;; default, current line number
+              (t              ;; default, current line number
 			    (propertize
 					(format (concat df-string (dove-evil-mode-string)) (number-to-string dove-current-line))
 					'face (if (evil-insert-state-p)
@@ -54,31 +80,54 @@
 								'linum-highlight)))
 
 		)
-		
 	    ;; other lines
-		(propertize
-		    (format (concat df-string " ") (number-to-string (cond ((< distance 0) (* -1 distance))
-												                   ((> distance 0) distance))))
-		    'face 'linum)
+	    (let ((mark-string (dove-line-evil-mark-string line-number)))
+		  (cond ((equal mark-string "")
+				 (propertize
+					(format (concat df-string " ") (number-to-string (cond ((< distance 0) (* -1 distance))
+																		((> distance 0) distance))))
+					'face 'linum)
+				)
+				((not (equal mark-string ""))
+				 (propertize
+				    mark-string 'face 'linum-highlight-evil-marker)
+				)
+		  )
+		)
 	)
-))
+  )
+)
 
-(if (display-graphic-p)
-	;; GUI mode
-	(progn
-	  (setq display-line-numbers-type 'relative)
-	  (global-display-line-numbers-mode t))
-    ;; terminal mode
-	(defvar dove-current-line 0)
+(defvar dove-linum-mode-p nil
+  "is dove linum mode enabled for now?")
 
+(defun dove-linum-mode-on ()
+  "init the dove linum mode"
+    (defvar dove-current-line 0)
+  
     (setq linum-format 'dove-linum)
-	(global-linum-mode t)
-	(set-face-foreground 'linum "green")
+    (global-linum-mode t)
+    (set-face-foreground 'linum "green")
 
-	(defadvice linum-update (around my-linum-update)
-	  (let ((dove-current-line (line-number-at-pos)))
-		ad-do-it))
-	(ad-activate 'linum-update)
+    (defadvice linum-update (around my-linum-update)
+    (let ((dove-current-line (line-number-at-pos)))
+        ad-do-it))
+    (ad-activate 'linum-update)
+	(setq dove-linum-mode-p t)
+)
+(defun dove-linum-mode-off ()
+  "close the dove linum mode"
+  (global-linum-mode nil)
+  (setq dove-linum-mode-p nil)
+)
+
+(define-minor-mode dove-linum-mode
+  "line number with evil"
+  :lighter " >_<"
+  (if dove-linum-mode-p
+	  (dove-linum-mode-off)
+	  (dove-linum-mode-on)
+  )
 )
 
 (provide 'dove-linum)

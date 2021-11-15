@@ -1,18 +1,12 @@
-(defvar termenv-list '("WindowsTerminal" "GUI" "Cmder")
-  "all the termenvs we have")
-
-(defvar lock-terminal-configuration-p nil
-  "if we have found the correct configuration file")
-
-(defvar wtconfiguration-path "C:/Users/Dove/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json")
-(defvar wtconfpoint-cursor-type 0)
+(defvar wtconfig-path "C:/Users/Dove/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json")
+(defvar wtconfig-buffer (find-file-noselect wtconfig-path t))
 
 (defun dove-set-wt-cursor (type)
-    (if (not (display-graphic-p))
-		(let ((buffer-cache  (current-buffer))
-			  (wtconf-buffer (find-file-noselect wtconfiguration-path t)))
-			(when wtconf-buffer
-				(set-buffer wtconf-buffer)
+    "set cursor for WindowsTerminal"
+    (if (and (not (display-graphic-p)) wtconfig-buffer)
+		(let ((buffer-cache (current-buffer)))
+			(when wtconfig-buffer
+				(set-buffer wtconfig-buffer)
 				(beginning-of-buffer)
 				(search-forward "cursorShape")
 				(forward-word)
