@@ -27,6 +27,8 @@
 (require 'init-ui)
 (require 'init-highlight)
 
+(require 'dove-term-env)
+
 ; learning elisp
 ; (require 'dove)
 

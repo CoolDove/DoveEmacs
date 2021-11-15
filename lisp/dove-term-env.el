@@ -1,0 +1,45 @@
+(defvar termenv-list '("WindowsTerminal" "GUI" "Cmder")
+  "all the termenvs we have")
+
+(defvar lock-terminal-configuration-p nil
+  "if we have found the correct configuration file")
+
+(defvar wtconfiguration-path "C:/Users/Dove/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json")
+(defvar wtconfpoint-cursor-type 0)
+
+(defun dove-set-wt-cursor (type)
+    (if (not (display-graphic-p))
+		(let ((buffer-cache  (current-buffer))
+			  (wtconf-buffer (find-file-noselect wtconfiguration-path t)))
+			(when wtconf-buffer
+				(set-buffer wtconf-buffer)
+				(beginning-of-buffer)
+				(search-forward "cursorShape")
+				(forward-word)
+				(backward-word)
+				(let ((word-length (length (thing-at-point 'word))))
+					(delete-char word-length)
+					(insert type)
+				)
+				(save-buffer)
+				(set-buffer buffer-cache)
+			)
+		)
+	)
+)
+
+(defun dsetcursor-bar ()
+  (dove-set-wt-cursor "bar"))
+(defun dsetcursor-filled-box ()
+  (dove-set-wt-cursor "filledBox"))
+(defun dsetcursor-underscore ()
+  (dove-set-wt-cursor "doubleUnderscore"))
+
+(when (not (display-graphic-p))
+    (add-hook 'evil-insert-state-entry-hook  'dsetcursor-bar)
+    (add-hook 'evil-insert-state-exit-hook   'dsetcursor-filled-box)
+    (add-hook 'evil-replace-state-entry-hook 'dsetcursor-underscore)
+    (add-hook 'evil-replace-state-exit-hook  'dsetcursor-filled-box)
+)
+
+(provide 'dove-term-env)

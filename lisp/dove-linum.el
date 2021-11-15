@@ -15,9 +15,9 @@
 )
 
 (defun dove-evil-mode-string ()
-  (cond ((evil-insert-state-p)  ":")
+  (cond ((evil-insert-state-p)  "@")
 		((evil-visual-state-p)  "~")
-		((evil-replace-state-p) "=")
+		((evil-replace-state-p) "#")
 		((evil-normal-state-p)  ">")
 		(t " "))
 )
