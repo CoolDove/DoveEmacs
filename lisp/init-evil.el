@@ -1,7 +1,7 @@
 (use-package evil
   :init   (evil-mode 1)
   :ensure t
-  :config (require 'evil-key)
+  :config (require 'dove-evil-key)
           (setq evil-auto-indent nil)
 )
 

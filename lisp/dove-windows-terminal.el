@@ -36,4 +36,4 @@
     (add-hook 'evil-replace-state-exit-hook  'dsetcursor-filled-box)
 )
 
-(provide 'dove-term-env)
+(provide 'dove-windows-terminal)

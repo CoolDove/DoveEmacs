@@ -29,15 +29,15 @@
  
 (defun dove-evil-register-string ()
   (let ((num-len         (length (number-to-string (line-number-at-pos (point-max)))))
-		(register-prefix (make-string (- (length (number-to-string (line-number-at-pos (point-max)))) 1) ?-)))
+		(register-prefix (make-string (- (length (number-to-string (line-number-at-pos (point-max)))) 1) ?~)))
 	(if evil-this-register
-	    (concat register-prefix (format "#%s" (char-to-string evil-this-register)))
+	    (concat register-prefix (format "~%s" (char-to-string evil-this-register)))
 		"-")
   )
 )
 
 (defun dove-mark-char-p (char)
-  (or (and (>= char 0) (<= char 9)) (and (>= char ?a) (<= char ?z)) (and (>= char ?A) (<= char ?Z)))
+  (and (>= char ?a) (<= char ?z))
 )
 
 (defun dove-line-evil-mark-string (lnum)
@@ -46,15 +46,20 @@
 	(dolist (item evil-markers-alist)
 		(let ((mchar  (car item))
 			  (marker (cdr item)))
-		  (when (and (dove-mark-char-p mchar)
-					 (markerp marker)
-					 (eql lnum (line-number-at-pos (marker-position marker))))
-		        (setq output (format "#%s" (char-to-string mchar)))
+		  (when (dove-mark-char-p mchar)
+			(cond ((and (markerp marker) (eql lnum (line-number-at-pos (marker-position marker))))
+				   ;; markers in current buffer
+		            (setq output (format "%s." (char-to-string mchar)))
+				  )
+                  ((and (markerp marker) (eql lnum (line-number-at-pos (marker-position marker))))
+				   ;; markers in current buffer
+				  ) 
+            )
 		  )
-		)
+	    )
 	)
 	(when (not (equal output ""))
-	  (let ((mark-prefix (make-string (- (length (number-to-string (line-number-at-pos (point-max)))) 1) ?*)))
+	  (let ((mark-prefix (make-string (- (length (number-to-string (line-number-at-pos (point-max)))) 1) ?=)))
 		(setq output (concat mark-prefix output))
 	  )
 	)
@@ -67,33 +72,28 @@
 		(df-string (format "%%%ds" (length (number-to-string (line-number-at-pos (point-max)))))))
 	(if (eql distance 0)
 		;; current line
-	(cond (evil-this-register ;; register mode
-			    (propertize
-					(dove-evil-register-string)
-					'face 'linum-highlight-evil-register))
+		(cond (evil-this-register ;; register mode
+					(propertize
+						(dove-evil-register-string)
+						'face 'linum-highlight-evil-register))
 
-              (t              ;; default, current line number
-			    (propertize
-					(format (concat df-string (dove-evil-mode-string)) (number-to-string dove-current-line))
-					'face (if (evil-insert-state-p)
-								'linum-highlight-insert
-								'linum-highlight)))
-
-		)
-	    ;; other lines
-	    (let ((mark-string (dove-line-evil-mark-string line-number)))
+			  (t                  ;; default, current line number
+					(propertize
+						(format (concat df-string (dove-evil-mode-string)) (number-to-string dove-current-line))
+						'face (if (evil-insert-state-p)
+									'linum-highlight-insert
+									'linum-highlight))))
+		;; other lines
+		(let ((mark-string (dove-line-evil-mark-string line-number)))
 		  (cond ((equal mark-string "")
-				 (propertize
-					(format (concat df-string " ") (number-to-string (cond ((< distance 0) (* -1 distance))
-																		((> distance 0) distance))))
-					'face 'linum)
-				)
-				((not (equal mark-string ""))
-				 (propertize
-				    mark-string 'face 'linum-highlight-evil-marker)
-				)
-		  )
-		)
+				  (propertize
+					  (format (concat df-string " ")
+						  (number-to-string (cond ((< distance 0) (* -1 distance))
+												  ((> distance 0) distance))))
+							  'face 'linum))
+				  ((not (equal mark-string ""))
+					  (propertize
+						  mark-string 'face 'linum-highlight-evil-marker))))
 	)
   )
 )
@@ -115,6 +115,7 @@
     (ad-activate 'linum-update)
 	(setq dove-linum-mode-p t)
 )
+
 (defun dove-linum-mode-off ()
   "close the dove linum mode"
   (global-linum-mode nil)

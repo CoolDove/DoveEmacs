@@ -8,7 +8,4 @@
 	   (interactive "Fchoose a file: ")
 	   (find-file-noselect file t))
 
-;(add-hook 'evil-insert-state-entry-hook 'line-number-current-line)
-;(add-hook 'evil-insert-state-exit-hook 'hello-dove)
-
 (provide 'dove)

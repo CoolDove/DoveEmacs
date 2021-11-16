@@ -70,6 +70,7 @@
 (evil-define-key '(normal visual) 'global
   (kbd "<leader>p") 'find-file
   (kbd "<leader>b") 'switch-to-buffer
+  (kbd "<leader>m") 'evil-delete-marks
 )
 
 ;; tab control
@@ -93,4 +94,4 @@
 ;(add-hook 'markdown-mode-hook 'dove-auto-save-after-edit)
 ;(add-hook 'org-mode-hook 'dove-auto-save-after-edit)
 
-(provide 'evil-key)
+(provide 'dove-evil-key)

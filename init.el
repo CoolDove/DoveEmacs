@@ -15,6 +15,8 @@
 
 (require 'package)
 
+(require 'dove-welcome)
+
 (require 'init-basic)
 (require 'init-indent)
 (require 'init-coding)
@@ -22,9 +24,8 @@
 (require 'dove-minor-mode)
 (require 'init-evil)
 (require 'init-tools)
-(require 'init-pyim)
 
-(require 'dove-term-env)
+(require 'dove-windows-terminal)
 
 (require 'init-ui)
 (require 'init-highlight)

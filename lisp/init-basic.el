@@ -26,4 +26,18 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+
+(setq-default scroll-step 1
+			 scroll-preserve-screen-position t
+			 scroll-up-aggressively 0.01
+			 scroll-down-aggressively 0.01
+			 redisplay-dont-pause t
+			 auto-window-vscroll nil
+
+			 mouse-wheel-scroll-amount '(1 ((shift) . 1))
+			 mouse-wheel-progressive-speed nil
+			 mouse-wheel-follow-mouse 't
+			 fast-but-imprecise-scrolling nil
+)
+
 (provide 'init-basic)

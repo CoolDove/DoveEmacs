@@ -44,5 +44,8 @@
 
 (require 'dove-linum)
 (dove-linum-mode)
+(set-face-background 'linum-highlight-evil-marker nil)
+(set-face-foreground 'linum-highlight-evil-marker "blue")
+(set-face-background 'linum-highlight-evil-register "cyan")
 
 (provide 'init-ui)
