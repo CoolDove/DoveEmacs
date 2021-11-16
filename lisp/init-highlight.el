@@ -56,34 +56,14 @@
 	(add-hook 'prog-mode-hook 'dove-note-highlight-terminal)
 )
 
-(defun dove-nice-line-number-gui ()
-  (interactive)
-  ; (set-face-background 'line-number-current-line "green")
-  ; (set-face-foreground 'line-number-current-line "black")
-)
-
-(defun dove-nice-line-number-terminal ()
-  (interactive)
-  ; (set-face-background 'line-number-current-line "green")
-  ; (set-face-foreground 'line-number-current-line "black")
-  ; (add-hook 'evil-insert-state-entry-hook
-			; '(lambda ()
-			   ; (set-face-background 'line-number-current-line "yellow")
-			   ; ()))
-  ; (add-hook 'evil-insert-state-exit-hook
-			; '(lambda ()
-			   ; (set-face-background 'line-number-current-line "green")))
-)
-
-
 (if (display-graphic-p)
 	; GUI highlight
-	(add-hook 'prog-mode-hook 'dove-note-highlight)
+	(progn
+		(add-hook 'prog-mode-hook 'dove-note-highlight)
+		(evil-set-cursor-color "green")
+	)
 	; terminal highlight
     (dove-highlight-text-terminal)
-	(if (display-graphic-p)
-		(dove-nice-line-number-gui)
-	    (dove-nice-line-number-terminal))
 )
 
 (provide 'init-highlight)

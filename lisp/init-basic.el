@@ -34,7 +34,7 @@
 			 redisplay-dont-pause t
 			 auto-window-vscroll nil
 
-			 mouse-wheel-scroll-amount '(1 ((shift) . 1))
+			 mouse-wheel-scroll-amount '(5 ((meta) . 1))
 			 mouse-wheel-progressive-speed nil
 			 mouse-wheel-follow-mouse 't
 			 fast-but-imprecise-scrolling nil

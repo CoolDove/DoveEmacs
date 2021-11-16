@@ -8,8 +8,14 @@
 (use-package evil-surround
   :ensure t
   :after  (evil)
-  :config (evil-surround-mode)
+  :config (evil-surround-mode 1)
   :hook   (prog-mode . evil-surround-mode)
 )
+
+(use-package evil-anzu
+  :ensure t
+  :after (evil)
+  :hook (prog-mode . anzu-mode)
+  :config (global-anzu-mode 1))
 
 (provide 'init-evil)

@@ -1,10 +1,16 @@
+
+; (setq stgroup-movement '(normal visual motion))
+; (setq stgroup-insert '(insert))
+
 (evil-define-key '(insert) 'global (kbd "<tab>") 'dove-indent)
 
+(evil-define-key '(normal visual motion) 'global (kbd "RET") 'linum-mode)
+
 ;; TODO: leader key here
-(evil-set-leader '(normal visual motion) (kbd "<tab>"))
+(evil-set-leader '(normal visual motion operator) (kbd "<tab>"))
 
 ;; cursor movement and navigation
-(evil-define-key '(normal visual) 'global
+(evil-define-key '(normal visual motion) 'global
   (kbd "C-l") 'evil-end-of-line
   (kbd "C-h") 'evil-beginning-of-line
   (kbd "C-j") 'evil-scroll-down
@@ -31,21 +37,21 @@
 )
 
 (evil-define-key '(normal visual) 'global
-  (kbd "C-M-j") 'evil-window-split
-  (kbd "C-M-k") 'dove-split-window-to-down
+  (kbd "C-M-j") 'dove-split-window-to-down
+  (kbd "C-M-k") 'evil-window-split
   (kbd "C-M-h") 'evil-window-vsplit
   (kbd "C-M-l") 'dove-split-window-to-right
 )
 
 ;; bookmark operations
-(evil-define-key '(normal visual operator) 'global
+(evil-define-key '(normal visual motion) 'global
   (kbd "M")     'bookmark-set
   (kbd "M-m")   'bookmark-jump
   (kbd "C-M-r") 'bookmark-delete
 )
 
 ;; window size
-(evil-define-key '(normal visual) 'global
+(evil-define-key '(normal visual motion) 'global
   (kbd "=") 'evil-window-increase-width
   (kbd "-") 'evil-window-decrease-width
   (kbd "+") 'evil-window-increase-height
@@ -53,7 +59,7 @@
 )
 
 ;; f number
-(evil-define-key '(normal visual) 'global
+(evil-define-key '(normal visual motion) 'global
   (kbd "<f2>")   'lsp-rename
   (kbd "<f3>")   'describe-variable
   (kbd "C-<f3>") 'describe-function
@@ -67,10 +73,9 @@
 )
 
 ;; file and buffer operations
-(evil-define-key '(normal visual) 'global
+(evil-define-key '(normal visual motion) 'global
   (kbd "<leader>p") 'find-file
   (kbd "<leader>b") 'switch-to-buffer
-  (kbd "<leader>m") 'evil-delete-marks
 )
 
 ;; tab control
@@ -82,9 +87,9 @@
 )
 
 (if (display-graphic-p)
-	(evil-define-key '(normal visual) 'global (kbd "?")   'youdao-dictionary-search-at-point-tooltip)
+	(evil-define-key '(visual) 'global (kbd "?")   'youdao-dictionary-search-at-point-tooltip)
     ;; else
-    (evil-define-key '(normal visual) 'global (kbd "?")   'youdao-dictionary-search-at-point+)
+    (evil-define-key '(visual) 'global (kbd "?")   'youdao-dictionary-search-at-point+)
 )
 
 ; auto save after exiting from Insert Mode, but it's terribly slow

@@ -107,6 +107,7 @@
   
     (setq linum-format 'dove-linum)
     (global-linum-mode t)
+	(linum-mode 1)
     (set-face-foreground 'linum "green")
 
     (defadvice linum-update (around my-linum-update)
@@ -114,21 +115,15 @@
         ad-do-it))
     (ad-activate 'linum-update)
 	(setq dove-linum-mode-p t)
+
+    (global-linum-mode -1)
+	(linum-mode -1)
 )
 
 (defun dove-linum-mode-off ()
   "close the dove linum mode"
   (global-linum-mode nil)
   (setq dove-linum-mode-p nil)
-)
-
-(define-minor-mode dove-linum-mode
-  "line number with evil"
-  :lighter " >_<"
-  (if dove-linum-mode-p
-	  (dove-linum-mode-off)
-	  (dove-linum-mode-on)
-  )
 )
 
 (provide 'dove-linum)
