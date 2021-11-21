@@ -29,6 +29,11 @@
 (defun dsetcursor-underscore ()
   (dove-set-wt-cursor "doubleUnderscore"))
 
+(defun work-on-windows-terminal (&optional path)
+  (when (equal nil path)
+	(message "path is nil"))
+)
+
 (when (not (display-graphic-p))
     (add-hook 'evil-insert-state-entry-hook  'dsetcursor-bar)
     (add-hook 'evil-insert-state-exit-hook   'dsetcursor-filled-box)

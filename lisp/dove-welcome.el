@@ -1,11 +1,33 @@
 (defvar dove-dotodo-path "~/.emacs.d/.dotodo")
 (defvar dove-welcome-buffer nil)
 
+(if (display-graphic-p)
 (defface dove-button-face
-  '((t (:background "black" :foreground "green")))
-  "linum highlight face"
+  '((t (:foreground "green")))
+  "linum high-light face"
   :group 'char-face
 )
+(defface dove-button-face
+  '((t (:background "black" :foreground "green")))
+  "linum high-light face"
+  :group 'char-face
+)
+)
+
+
+(if (display-graphic-p)
+	(defface dove-button-face-highlight
+	'((t (:box t :foreground "lightblue")))
+	"linum highlight face"
+	:group 'char-face
+	)
+	(defface dove-button-face-highlight
+	'((t (:background "yellow" :foreground "black")))
+	"linum highlight face"
+	:group 'char-face
+	)
+)
+
 (defface dove-button-face-highlight
   '((t (:background "yellow" :foreground "black")))
   "linum highlight face"
@@ -56,10 +78,10 @@
 	"+  888       o  8    Y     888   .8'     `888.  `88b    ooo oo     .d8P +\n"
 	"+ o888ooooood8 o8o        o888o o88o     o8888o  `Y8bood8P' 8''88888P'  +\n"
 	"+-----------------------------------------------------------------------+\n"
-	"|                              ..:::::::::..                            |\n"
-	"|                         ..:::|bo,::::::::::::..                       |\n"
+	"|                              .i:::::::::..                            |\n"
+	"|                         ..:::|bo;::::::::::::..                       |\n"
 	"|                      .:::::::\\&&aaooc::::::::::::.                    |\n"
-	"|                    .::::::::::>88d88888888b::::::::.                  |\n"
+	"|                    .::::::::::)88d88888888b::::::::.                  |\n"
 	"|                  .::::::::::::d88888888888888b:::::::.                |\n"
 	"|                 :::::::::::::d88ooa8b8d8coo8888::::::::               |\n"
 	"|                :::::::::::::d888' '88888' '88888::::::::              |\n"
@@ -94,6 +116,7 @@
 	  (insert-char 10 1)
 	)
 )
+
 
 (defun dove-welcdraw-title (tname)
   (when (stringp tname)

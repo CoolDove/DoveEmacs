@@ -8,10 +8,10 @@
 
 (defun dove-note-highlight-terminal ()
   "set dove note highlight for current buffer"
-  (font-lock-add-keywords nil '(("\\<\\(FIXME:\\)" 1 '(:foreground "red"      :box t) t)))
+  (font-lock-add-keywords nil '(("\\<\\(FIXME:\\)" 1 '(:background "red"      :box t) t)))
   (font-lock-add-keywords nil '(("\\<\\(NOTE:\\)"  1 '(:foreground "lightred" :box t) t)))
   (font-lock-add-keywords nil '(("\\<\\(TODO:\\)"  1 '(:foreground "blue"     :box t) t)))
-  (font-lock-add-keywords nil '(("\\(@[A-Za-z][A-Za-z]*:\\)"  1 '(:background "cyan" :foreground "grey" :box t) t)))
+  (font-lock-add-keywords nil '(("\\(@[A-Za-z][A-Za-z]*:\\)"  1 '(:background "yellow" :foreground "black" :box t) t)))
 )
 
 (defun dove-company-highlight-terminal ()
@@ -29,9 +29,11 @@
 
 (defun dove-highlight-text-terminal ()
     (set-face-foreground font-lock-variable-name-face   "lightgray")
-    (set-face-foreground font-lock-string-face          "cyan")
-    (set-face-foreground font-lock-keyword-face         "lightred")
+    (set-face-foreground font-lock-string-face          "lightcyan")
+    (set-face-foreground font-lock-keyword-face         "green")
+    (set-face-foreground font-lock-function-name-face   "cyan")
     (set-face-foreground font-lock-comment-face         "darkgray")
+    (set-face-foreground font-lock-type-face            "yellow")
     (set-face-foreground 'button                        "lightgreen")
 
     (set-face-foreground 'cursor                        "lightgray")
@@ -52,6 +54,7 @@
     (set-face-background 'header-line                   "white")
 
 	(dove-sml-highlight-terminal)
+	(add-hook 'flycheck-mode '(lambda ((set-face-foreground 'flycheck-error "red"))))
 	(add-hook 'company-mode-hook 'dove-company-highlight-terminal)
 	(add-hook 'prog-mode-hook 'dove-note-highlight-terminal)
 )

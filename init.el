@@ -21,11 +21,12 @@
 (require 'init-indent)
 (require 'init-coding)
 
-(require 'dove-minor-mode)
 (require 'init-evil)
 (require 'init-tools)
 
-(require 'dove-windows-terminal)
+(unless (display-graphic-p)
+    (require 'dove-windows-terminal)
+)
 
 (require 'init-ui)
 (require 'init-highlight)

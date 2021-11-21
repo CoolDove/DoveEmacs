@@ -16,11 +16,13 @@
 
 (use-package lsp-mode
              :init (setq lsp-keymap-prefix "C-c l")
+             ;; :hook ((csharp-mode   . lsp-deferred))
              :hook ((c++-mode      . lsp-deferred)
                     (csharp-mode   . lsp-deferred))
              :commands lsp
-			 :config (setq lsp-enable-symbol-highlighting nil)
-			         ;(lsp-semantic-tokens-mode)
+			 :config (setq lsp-enable-symbol-highlighting   nil
+					       lsp-headerline-breadcrumb-enable nil)
 )
+
 
 (provide 'init-coding)

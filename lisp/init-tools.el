@@ -14,6 +14,9 @@
              :ensure t
 )
 
+(use-package deadgrep
+  :ensure t)
+
 (use-package pyim
   :ensure t
   :config (pyim-default-scheme 'microsoft-shuangpin)

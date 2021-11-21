@@ -83,7 +83,7 @@
 						'face (if (evil-insert-state-p)
 									'linum-highlight-insert
 									'linum-highlight))))
-		;; other lines
+	  ;; other lines
 		(let ((mark-string (dove-line-evil-mark-string line-number)))
 		  (cond ((equal mark-string "")
 				  (propertize
