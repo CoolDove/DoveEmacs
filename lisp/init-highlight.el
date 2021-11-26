@@ -18,13 +18,23 @@
   "adjust highlight for company mode in terminal"
   (set-face-background 'company-tooltip "darkgray")
 )
+
 (defun dove-sml-highlight-terminal ()
   "adjust highlight for sml in terminal"
-    (set-face-foreground 'sml/client         "black")
-    (set-face-foreground 'sml/filename       "black")
-    (set-face-foreground 'sml/modes          "cyan")
-    (set-face-foreground 'sml/prefix         "cyan")
-    (set-face-foreground 'sml/git            "cyan")
+    (set-face-foreground 'sml/git                       "cyan")
+	(set-face-foreground 'sml/client                    "gray")
+	(set-face-foreground 'sml/col-number                "gray")
+	(set-face-foreground 'sml/filename                  "gray")
+	(set-face-foreground 'sml/folder                    "gray")
+	(set-face-foreground 'sml/global                    "gray")
+	(set-face-foreground 'sml/minor-modes               "gray")
+	(set-face-foreground 'sml/mule-info                 "gray")
+	(set-face-foreground 'sml/outside-modified          "gray")
+	(set-face-foreground 'sml/not-modified              "gray")
+	(set-face-foreground 'sml/remote                    "gray")
+	(set-face-foreground 'sml/sudo                      "gray")
+	(set-face-foreground 'sml/line-number               "gray")
+	(set-face-foreground 'sml/read-only                 "cyan")
 )
 
 (defun dove-highlight-text-terminal ()
@@ -52,6 +62,11 @@
     (set-face-background 'tty-menu-selected-face        "green")
 
     (set-face-background 'header-line                   "white")
+
+    (set-face-background 'mode-line                     "white")
+    (set-face-foreground 'mode-line                     "yellow")
+    (set-face-background 'mode-line-inactive            "black")
+    (set-face-foreground 'mode-line-inactive            "lightgray")
 
 	(dove-sml-highlight-terminal)
 	(add-hook 'flycheck-mode '(lambda ((set-face-foreground 'flycheck-error "red"))))

@@ -3,10 +3,12 @@
 ; (setq stgroup-insert '(insert))
 
 (evil-define-key '(insert) 'global (kbd "<tab>") 'dove-indent)
+(evil-define-key '(insert) 'global (kbd "C-<backspace>") 'evil-delete-backward-word)
+
+(evil-define-key '(insert) 'global (kbd "C-SPC") 'complete)
 
 (evil-define-key '(normal visual motion) 'global (kbd "RET") 'linum-mode)
 
-;; TODO: leader key here
 (evil-set-leader '(normal visual motion operator) (kbd "<tab>"))
 
 ;; cursor movement and navigation
@@ -17,6 +19,10 @@
   (kbd "C-k") 'evil-scroll-up
   (kbd "M-j") 'evil-scroll-line-down
   (kbd "M-k") 'evil-scroll-line-up
+  (kbd "L")   'evil-forward-word-begin
+  (kbd "H")   'evil-backward-word-begin
+  (kbd "M-l") 'evil-forward-WORD-begin
+  (kbd "M-h") 'evil-backward-word-begin
 )
 
 ; split a new line
@@ -79,24 +85,18 @@
 )
 
 ;; tab control
-(evil-define-key '(normal visual operator emacs motion) 'global
-  (kbd "<leader>n") 'tab-new
-  (kbd "C-i") 'tab-next
-  (kbd "C-u") 'tab-previous
-  (kbd "<leader>r") 'tab-rename
-)
+;; but i never use tab...
+;; (evil-define-key '(normal visual operator emacs motion) 'global
+  ;; (kbd "<leader>n") 'tab-new
+  ;; (kbd "C-i") 'tab-next
+  ;; (kbd "C-u") 'tab-previous
+  ;; (kbd "<leader>r") 'tab-rename
+;; )
 
 (if (display-graphic-p)
-	(evil-define-key '(visual) 'global (kbd "?")   'youdao-dictionary-search-at-point-tooltip)
+	(evil-define-key '(visual) 'global (kbd "?")   #'youdao-dictionary-search-at-point-tooltip)
     ;; else
-    (evil-define-key '(visual) 'global (kbd "?")   'youdao-dictionary-search-at-point+)
+    (evil-define-key '(visual) 'global (kbd "?")   #'youdao-dictionary-search-at-point+)
 )
-
-; auto save after exiting from Insert Mode, but it's terribly slow
-;(defun dove-auto-save-after-edit ()
-  ;(add-hook 'evil-insert-state-exit-hook 'save-buffer)
-;)
-;(add-hook 'markdown-mode-hook 'dove-auto-save-after-edit)
-;(add-hook 'org-mode-hook 'dove-auto-save-after-edit)
 
 (provide 'dove-evil-key)

@@ -30,17 +30,6 @@
       (sml/setup)
 )
 
-; cant work with company
-; but maybe i could learn something from this package
-;(use-package indent-guide
-  ;:after  prog-mode
-  ;:ensure t
-  ;:hook   (prog-mode . indent-guide-mode)
-  ;:config
-          ;(setq indent-guide-delay      0.1)
-          ;(setq indent-guide-resursive  t  )
-;)
-
 (require 'dove-linum)
 (dove-linum-mode-on)
 (when (display-graphic-p)

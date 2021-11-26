@@ -15,8 +15,6 @@
 
 (require 'package)
 
-(require 'dove-welcome)
-
 (require 'init-basic)
 (require 'init-indent)
 (require 'init-coding)
@@ -31,10 +29,7 @@
 (require 'init-ui)
 (require 'init-highlight)
 
-
 ; learning elisp
 ; (require 'dove)
-
-
 (server-start)
 ;;************************
