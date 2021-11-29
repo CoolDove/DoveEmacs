@@ -3,7 +3,7 @@
   (font-lock-add-keywords nil '(("\\<\\(FIXME:\\)" 1 '(:foreground "red"     :box t) t)))
   (font-lock-add-keywords nil '(("\\<\\(NOTE:\\)"  1 '(:foreground "yellow"  :box t) t)))
   (font-lock-add-keywords nil '(("\\<\\(TODO:\\)"  1 '(:foreground "#22dfa0" :box t) t)))
-  (font-lock-add-keywords nil '(("\\(@[A-Za-z][A-Za-z]*:\\)"  1 '(:background "#116576" :foreground "grey" :box t) t)))
+  (font-lock-add-keywords nil '(("\\(@[A-Za-z][A-Za-z]*:\\)"  1 '(:background "#e66735" :foreground "#2d3743" :box t) t)))
 )
 
 (defun dove-note-highlight-terminal ()
@@ -79,8 +79,10 @@
 	(progn
 		(add-hook 'prog-mode-hook 'dove-note-highlight)
 		(evil-set-cursor-color "green")
+		(set-face-background 'region "#5daf68")
+		(set-face-foreground 'region "#2d3743")
 	)
-	; terminal highlight
+	; Terminal highlight
     (dove-highlight-text-terminal)
 )
 

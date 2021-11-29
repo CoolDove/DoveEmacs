@@ -1,1 +1,6 @@
-(nil)
+((("CommandBufferPool" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("DoveRPAsset" .
+   [0 0 0 0 0 0 1 0 0 0 0])
+  ("private" .
+   [0 0 0 0 0 0 1])))

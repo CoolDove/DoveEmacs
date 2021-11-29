@@ -10,9 +10,10 @@
 
 ;; theme things
 (when (display-graphic-p)
-	(use-package gruvbox-theme
-		:init   (load-theme 'gruvbox-dark-soft t)
-		:ensure t)
+	;; (use-package gruvbox-theme
+		;; :init   (load-theme 'gruvbox-dark-soft t)
+		;; :ensure t)
+	(load-theme 'misterioso)
 	(use-package ivy-posframe
 	:ensure t
 	:after  (ivy)

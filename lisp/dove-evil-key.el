@@ -1,4 +1,3 @@
-
 ; (setq stgroup-movement '(normal visual motion))
 ; (setq stgroup-insert '(insert))
 
@@ -10,6 +9,8 @@
 (evil-define-key '(normal visual motion) 'global (kbd "RET") 'linum-mode)
 
 (evil-set-leader '(normal visual motion operator) (kbd "<tab>"))
+
+(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>r") 'read-only-mode)
 
 ;; cursor movement and navigation
 (evil-define-key '(normal visual motion) 'global

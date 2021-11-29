@@ -114,7 +114,7 @@
   :prefix "nox-"
   :group 'applications)
 
-(defvar nox-omni-sharp-path "~/.emacs.d/.cache/omnisharp/server/v1.34.5/OmniSharp.exe")
+(defvar nox-omni-sharp-path "~/.emacs.d/.cache/lsp/omnisharp-roslyn/latest/omnisharp-roslyn/OmniSharp.exe" )
 
 (defvar nox-server-programs
   '((rust-mode . (nox-rls "rls"))
@@ -2318,7 +2318,7 @@ influence of C1 on the result."
     :logLevel "Error"
     :typeDefinitionProvider ,(concat nox-python-server-dir "Typeshed")))
 
-(defun nox--python-contact (interactive)
+(defun nox--on-contact (interactive)
   (cond ((string-equal nox-python-server "mspyls")
          (setq-default nox-workspace-configuration
                        '((:python :autoComplete (:extraPaths nil)
