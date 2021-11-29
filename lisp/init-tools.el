@@ -24,4 +24,11 @@
 
 (setq default-input-method "pyim")
 
+(use-package undo-tree
+  :ensure t
+  :config (global-undo-tree-mode))
+
+(use-package goto-last-change
+  :ensure t)
+
 (provide 'init-tools)
