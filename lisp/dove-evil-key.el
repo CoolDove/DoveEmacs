@@ -1,10 +1,5 @@
-; (setq stgroup-movement '(normal visual motion))
-; (setq stgroup-insert '(insert))
-
 (evil-define-key '(insert) 'global (kbd "<tab>") 'dove-indent)
 (evil-define-key '(insert) 'global (kbd "C-<backspace>") 'evil-delete-backward-word)
-
-(evil-define-key '(insert) 'global (kbd "C-SPC") 'complete)
 
 (evil-define-key '(normal visual motion) 'global (kbd "RET") 'linum-mode)
 
@@ -68,8 +63,8 @@
 ;; f number
 (evil-define-key '(normal visual motion) 'global
   (kbd "<f2>")   'lsp-rename
-  (kbd "<f3>")   'describe-variable
-  (kbd "C-<f3>") 'describe-function
+  (kbd "<f3>")   'goto-last-change
+  (kbd "C-<f3>") 'goto-last-change-reverse
   (kbd "<f4>")   'tab-close
   (kbd "C-<f4>") 'tab-close
   (kbd "<f5>")   'eval-region
@@ -78,21 +73,6 @@
   (kbd "<f12>")  'lsp-find-definition
   (kbd "<f10>")  'toggle-menu-bar-mode-from-frame
 )
-
-;; file and buffer operations
-(evil-define-key '(normal visual motion) 'global
-  (kbd "<leader>p") 'find-file
-  (kbd "<leader>b") 'switch-to-buffer
-)
-
-;; tab control
-;; but i never use tab...
-;; (evil-define-key '(normal visual operator emacs motion) 'global
-  ;; (kbd "<leader>n") 'tab-new
-  ;; (kbd "C-i") 'tab-next
-  ;; (kbd "C-u") 'tab-previous
-  ;; (kbd "<leader>r") 'tab-rename
-;; )
 
 (if (display-graphic-p)
 	(evil-define-key '(visual) 'global (kbd "?")   #'youdao-dictionary-search-at-point-tooltip)

@@ -1,18 +1,18 @@
+(use-package goto-last-change
+  :ensure t)
+
 (use-package youdao-dictionary
   :defer 2
   :ensure t
-  :config(setq url-automatic-caching t)
-)
+  :config(setq url-automatic-caching t))
 
 (use-package ivy
              :ensure t
              :diminish ivy-mode
-             :hook (after-init . ivy-mode)
-)
+             :hook (after-init . ivy-mode))
 
 (use-package restart-emacs
-             :ensure t
-)
+             :ensure t)
 
 (use-package deadgrep
   :ensure t)
@@ -20,15 +20,10 @@
 (use-package pyim
   :ensure t
   :config (pyim-default-scheme 'microsoft-shuangpin)
-          (setq pyim-indicator-cursor-color "blue"))
+          (setq pyim-indicator-cursor-color "blue")
+          (setq default-input-method "pyim"))
 
-(setq default-input-method "pyim")
-
-(use-package undo-tree
-  :ensure t
-  :config (global-undo-tree-mode))
-
-(use-package goto-last-change
+(use-package magit
   :ensure t)
 
 (provide 'init-tools)

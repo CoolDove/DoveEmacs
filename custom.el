@@ -41,7 +41,7 @@
  '(ibuffer-marked-face 'modus-theme-mark-sel)
  '(ibuffer-title-face 'modus-theme-pseudo-header)
  '(package-selected-packages
-   '(goto-last-change undo-tree tron-legacy-theme vterm-module vterm counsel helm-lsp helm-company helm tao-theme shader-mode hlsl-mode nano-modeline nyan-mode eglot darkroom darkroom-mode glsl-mode deadgrep company-ctags fzf affe fiplr evil-mc evil-anzu dove-linum pyim youdao-dictionary which-key use-package smooth-scroll smart-mode-line restart-emacs projectile poly-markdown omnisharp ivy-posframe indent-guide gruvbox-theme find-file-in-project evil-surround dashboard dap-mode company all-the-icons))
+   '(magit evil-ex-shell-command evil-visualstar goto-last-change undo-tree tron-legacy-theme vterm-module vterm counsel helm-lsp helm-company helm tao-theme shader-mode hlsl-mode nano-modeline nyan-mode eglot darkroom darkroom-mode glsl-mode deadgrep fzf fiplr evil-mc evil-anzu dove-linum pyim youdao-dictionary which-key use-package smooth-scroll smart-mode-line restart-emacs projectile poly-markdown omnisharp ivy-posframe indent-guide gruvbox-theme find-file-in-project evil-surround dashboard dap-mode company all-the-icons))
  '(safe-local-variable-values '((eval when (fboundp 'rainbow-mode) (rainbow-mode 1))))
  '(show-paren-mode t)
  '(tool-bar-mode nil)
