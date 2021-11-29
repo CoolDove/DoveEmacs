@@ -6,6 +6,7 @@
 (evil-set-leader '(normal visual motion operator) (kbd "<tab>"))
 
 (evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>r") 'read-only-mode)
+(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>g") 'magit)
 
 ;; cursor movement and navigation
 (evil-define-key '(normal visual motion) 'global
@@ -65,12 +66,8 @@
   (kbd "<f2>")   'lsp-rename
   (kbd "<f3>")   'goto-last-change
   (kbd "C-<f3>") 'goto-last-change-reverse
-  (kbd "<f4>")   'tab-close
-  (kbd "C-<f4>") 'tab-close
   (kbd "<f5>")   'eval-region
   (kbd "C-<f5>") 'eval-expression
-  (kbd "<f8>")   'lsp-pind-declaration
-  (kbd "<f12>")  'lsp-find-definition
   (kbd "<f10>")  'toggle-menu-bar-mode-from-frame
 )
 

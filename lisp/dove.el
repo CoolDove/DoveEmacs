@@ -15,5 +15,9 @@
 )
 (ad-activate #'evil-use-register)
 
+;; a simple peek lib
+(use-package quick-peek
+  :ensure t)
+(quick-peek-hide "hello this is a test")
 
 (provide 'dove)
