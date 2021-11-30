@@ -3,4 +3,5 @@
 .*
 bookmarks
 !.gitignore
-
+projects
+ac-comphist.dat
