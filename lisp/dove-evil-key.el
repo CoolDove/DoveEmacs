@@ -69,6 +69,7 @@
   (kbd "<f5>")   'eval-region
   (kbd "C-<f5>") 'eval-expression
   (kbd "<f10>")  'toggle-menu-bar-mode-from-frame
+  (kbd "<f12>")  'dws-last
 )
 
 (if (display-graphic-p)

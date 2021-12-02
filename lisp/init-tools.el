@@ -19,11 +19,14 @@
 
 (use-package pyim
   :ensure t
-  :config (pyim-default-scheme 'microsoft-shuangpin)
-          (setq pyim-indicator-cursor-color "blue")
-          (setq default-input-method "pyim"))
+  :config (setq pyim-indicator-cursor-color "blue")
+          (pyim-default-scheme 'microsoft-shuangpin))
+
+(setq default-input-method "pyim")
 
 (use-package magit
   :ensure t)
+
+(require 'dove-web-search)
 
 (provide 'init-tools)
