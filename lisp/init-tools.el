@@ -27,6 +27,9 @@
 (use-package magit
   :ensure t)
 
+(use-package find-file-rg
+  :ensure t)
+
 (require 'dove-web-search)
 
 (provide 'init-tools)

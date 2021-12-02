@@ -78,4 +78,6 @@
     (evil-define-key '(visual) 'global (kbd "?")   #'youdao-dictionary-search-at-point+)
 )
 
+(evil-define-key '(normal visual motion) 'global (kbd "C-x C-p") 'find-file-rg)
+
 (provide 'dove-evil-key)
