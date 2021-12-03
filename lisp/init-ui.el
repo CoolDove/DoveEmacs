@@ -67,6 +67,7 @@
 	(set-face-background 'linum-highlight-evil-register "cyan")
 )
 
+(require 'zone)
 (zone-when-idle 180)
 
 (provide 'init-ui)
