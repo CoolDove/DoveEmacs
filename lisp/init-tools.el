@@ -32,4 +32,7 @@
 
 (require 'dove-web-search)
 
+
+(setq eww-search-prefix "https://www.bing.com/search?q=")
+
 (provide 'init-tools)
