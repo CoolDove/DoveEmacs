@@ -67,6 +67,6 @@
 	(set-face-background 'linum-highlight-evil-register "cyan")
 )
 
-(zone-when-idle 180)
+;; (zone-when-idle 180)
 
 (provide 'init-ui)
