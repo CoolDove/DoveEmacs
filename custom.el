@@ -9,6 +9,7 @@
    ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
  '(awesome-tray-mode-line-active-color "#0031a9")
  '(awesome-tray-mode-line-inactive-color "#d7d7d7")
+ '(custom-enabled-themes '(misterioso))
  '(custom-safe-themes
    '("cf9414f229f6df728eb2a5a9420d760673cca404fee9910551caf9c91cff3bfa" "dbade2e946597b9cda3e61978b5fcc14fa3afa2d3c4391d477bdaeff8f5638c5" "801a567c87755fe65d0484cb2bded31a4c5bb24fd1fe0ed11e6c02254017acb2" "1df2d767cc1b5ed78626f93f06c24ac15144a28b7420364769bf63cd23e420d3" "6bdcff29f32f85a2d99f48377d6bfa362768e86189656f63adbf715ac5c1340b" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "6b5c518d1c250a8ce17463b7e435e9e20faa84f3f7defba8b579d4f5925f60c1" "7661b762556018a44a29477b84757994d8386d6edee909409fabe0631952dad9" "4eb6fa2ee436e943b168a0cd8eab11afc0752aebb5d974bba2b2ddc8910fca8f" "83e0376b5df8d6a3fbdfffb9fb0e8cf41a11799d9471293a810deb7586c131e6" default))
  '(display-line-numbers-type 'relative)
@@ -17,6 +18,7 @@
  '(flymake-note-bitmap '(exclamation-mark modus-theme-fringe-cyan))
  '(flymake-warning-bitmap '(exclamation-mark modus-theme-fringe-yellow))
  '(highlight-tail-colors '(("#aecf90" . 0) ("#c0efff" . 20)))
+ '(hl-sexp-background-color "#efebe9")
  '(hl-todo-keyword-faces
    '(("HOLD" . "#70480f")
 	 ("TODO" . "#721045")
@@ -41,7 +43,7 @@
  '(ibuffer-marked-face 'modus-theme-mark-sel)
  '(ibuffer-title-face 'modus-theme-pseudo-header)
  '(package-selected-packages
-   '(heaven-and-hell dim eldoc-box dimmer diminish auto-dim-other-buffers mosey find-file-rg web-search quick-peek zoom-window on-screen elscreen centaur-tabs magit evil-ex-shell-command evil-visualstar goto-last-change undo-tree counsel shader-mode hlsl-mode eglot glsl-mode deadgrep evil-mc evil-anzu dove-linum pyim youdao-dictionary use-package smooth-scroll smart-mode-line restart-emacs projectile poly-markdown omnisharp ivy-posframe indent-guide gruvbox-theme evil-surround company all-the-icons))
+   '(org-bullets heaven-and-hell darkroom pdf-tools dim eldoc-box dimmer diminish auto-dim-other-buffers mosey find-file-rg web-search quick-peek zoom-window on-screen elscreen centaur-tabs magit evil-ex-shell-command evil-visualstar goto-last-change undo-tree counsel shader-mode hlsl-mode eglot glsl-mode deadgrep evil-mc evil-anzu dove-linum pyim youdao-dictionary use-package smooth-scroll smart-mode-line restart-emacs projectile poly-markdown omnisharp ivy-posframe indent-guide gruvbox-theme evil-surround company all-the-icons))
  '(safe-local-variable-values '((eval when (fboundp 'rainbow-mode) (rainbow-mode 1))))
  '(show-paren-mode t)
  '(tool-bar-mode nil)
