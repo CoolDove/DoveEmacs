@@ -70,4 +70,19 @@
 (require 'zone)
 (zone-when-idle 180)
 
+(use-package heaven-and-hell
+  :ensure t
+  :init
+  (setq heaven-and-hell-theme-type 'dark)
+  (setq heaven-and-hell-themes
+		'((light . adwaita)
+		  (dark  . misterioso)))
+  (setq heaven-and-hell-load-theme-no-confirm t)
+  (defun dove-heaven-hell-toggle ()
+	(interactive)
+	(heaven-and-hell-toggle-theme)
+	(evil-set-cursor-color (cond ((equal heaven-and-hell-theme-type 'dark)  "green")
+								 ((equal heaven-and-hell-theme-type 'light) "black"))))
+  :hook (after-init . heaven-and-hell-init-hook))
+
 (provide 'init-ui)
