@@ -4,6 +4,7 @@
   (setq web-search-default-provider "Bing"))
 
 (require 'web-search)
+(push (list "Bili" "https://search.bilibili.com/all?keyword=%s" "Code") web-search-providers)
 (push (list "UnityDoc2019.4" "https://docs.unity3d.com/2019.4/Documentation/ScriptReference/30_search.html?q=%s" "Code") web-search-providers)
 (push (list "UnityDoc2020.3" "https://docs.unity3d.com/2020.3/Documentation/ScriptReference/30_search.html?q=%s" "Code") web-search-providers)
 (push (list "UnityDoc2021.2" "https://docs.unity3d.com/2021.2/Documentation/ScriptReference/30_search.html?q=%s" "Code") web-search-providers)
@@ -12,7 +13,6 @@
   (interactive)
   (call-interactively #'web-search)
 )
-
 
 (defmacro dws-register-provider (symb name)
 	`(defun ,(intern (format "dws-%s" symb))
@@ -29,8 +29,9 @@
 (dws-register-provider GitHub "GitHub")
 (dws-register-provider Gist "Gist")
 
-(dws-register-provider StackOF "Stack Overflow")
 (dws-register-provider Zhihu "Zhihu")
+(dws-register-provider Bili "Bili")
+(dws-register-provider StackOF "Stack Overflow")
 (dws-register-provider Youtb "YouTube")
 (dws-register-provider Reddit "Reddit")
 (dws-register-provider HackerNews "Hacker News")

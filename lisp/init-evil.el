@@ -51,6 +51,7 @@
   ))
 )
 
+;; FIXME: cannot work on strings with '%'
 (defadvice evil-yank (after notice-yank)
   (when (> (- end beg) 1)
 	(let ((output (concat
