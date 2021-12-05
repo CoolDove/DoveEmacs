@@ -29,6 +29,8 @@
 (require 'init-ui)
 (require 'init-highlight)
 
+(require 'dove-org-gtd)
+
 ; learning elisp
 ; (require 'dove)
 (server-start)

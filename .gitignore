@@ -1,5 +1,6 @@
 /*/
 !/lisp/
+!/dorg/
 .*
 bookmarks
 !.gitignore

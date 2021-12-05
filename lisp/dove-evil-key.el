@@ -7,6 +7,7 @@
 
 (evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>r") 'read-only-mode)
 (evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>g") 'magit)
+(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>a") 'org-agenda)
 
 ;; cursor movement and navigation
 (evil-define-key '(normal visual motion) 'global
