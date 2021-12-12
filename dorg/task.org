@@ -1,7 +1,10 @@
 * group: <2021-12-00>
-* TODO learn org mode
+* DONE learn org mode
 ** DONE org basic <2021-12-04 周六>
 ** DONE org agenda <2021-12-04 周六>
-** TODO stash org files to git  <2021-12-05 周日>
-* DONE buy something <2021-12-05 周日>
-* TODO go over SRP techs <2021-12-05 周日 20:00>
+** DONE stash org files to git  <2021-12-05 23:00 周日>
+* DONE buy something <2021-12-05 16:00 周日>
+* DONE go over SRP techs <2021-12-05 周日 23:00>
+
+* DONE path renderer <2021-12-06 周一 23:00>
+* TODO fix windows time zone problem <2021-12-07 周二 23:00>

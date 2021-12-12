@@ -81,6 +81,9 @@
 		(evil-set-cursor-color "green")
 		(set-face-background 'region "#5daf68")
 		(set-face-foreground 'region "#2d3743")
+	    (set-face-background 'show-paren-match "#00000000")
+	    (set-face-attribute 'show-paren-match nil :underline t)
+	    (set-face-foreground 'show-paren-match "#00ea66")
 	)
 	; Terminal highlight
     (dove-highlight-text-terminal)

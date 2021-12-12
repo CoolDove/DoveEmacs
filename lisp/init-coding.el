@@ -25,11 +25,14 @@
 (setq nox-send-changes-idle-time 2.5)
 
 (use-package lsp-mode
+             :ensure t
              :init (setq lsp-keymap-prefix "C-c l")
              ;; :hook ((c++-mode      . lsp-deferred) (csharp-mode   . lsp-deferred))
-             :hook ((c++-mode      . lsp-deferred))
+             :hook (c++-mode      . lsp-deferred)
              :commands lsp
 			 :config (setq lsp-enable-symbol-highlighting   nil
+						   lsp-enable-file-watchers         nil
+						   lsp-eldoc-hook                   nil
 	                       lsp-headerline-breadcrumb-enable nil
 	                       lsp-log-io nil
                            lsp-enable-folding nil 
@@ -37,10 +40,9 @@
                            lsp-enable-snippet nil
 	                       lsp-enable-links nil
 	                       lsp-restart 'auto-restart
-						   lsp-idle-delay 1.5)
+						   lsp-idle-delay 0.5)
                      (setq gc-cons-threshold 100000000)
                      (setq read-process-output-max (* 1024 1024))
-					 (add-hook 'lsp-before-open-hook '(lambda () (flycheck-mode 0) (eldoc-mode 0)))
 )
 
 (provide 'init-coding)
