@@ -43,7 +43,7 @@
  '(ibuffer-marked-face 'modus-theme-mark-sel)
  '(ibuffer-title-face 'modus-theme-pseudo-header)
  '(package-selected-packages
-   '(org-bullets heaven-and-hell darkroom pdf-tools dim eldoc-box dimmer diminish auto-dim-other-buffers mosey find-file-rg web-search quick-peek zoom-window on-screen elscreen centaur-tabs magit evil-ex-shell-command evil-visualstar goto-last-change undo-tree counsel shader-mode hlsl-mode eglot glsl-mode deadgrep evil-mc evil-anzu dove-linum pyim youdao-dictionary use-package smooth-scroll smart-mode-line restart-emacs projectile poly-markdown omnisharp ivy-posframe indent-guide gruvbox-theme evil-surround company all-the-icons))
+   '(csharp-mode org-bullets heaven-and-hell darkroom pdf-tools dim eldoc-box dimmer diminish auto-dim-other-buffers mosey find-file-rg web-search quick-peek zoom-window on-screen elscreen centaur-tabs magit evil-ex-shell-command evil-visualstar goto-last-change undo-tree counsel shader-mode hlsl-mode eglot glsl-mode deadgrep evil-mc evil-anzu dove-linum pyim youdao-dictionary use-package smooth-scroll smart-mode-line restart-emacs projectile poly-markdown omnisharp ivy-posframe indent-guide gruvbox-theme evil-surround company all-the-icons))
  '(safe-local-variable-values '((eval when (fboundp 'rainbow-mode) (rainbow-mode 1))))
  '(show-paren-mode t)
  '(tool-bar-mode nil)
@@ -78,4 +78,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Cascadia Code" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
+ '(default ((t (:family "Cascadia Code" :foundry "outline" :slant normal :weight normal :height 102 :width normal)))))

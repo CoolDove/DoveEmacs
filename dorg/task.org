@@ -1,7 +1,18 @@
 * group: <2021-12-00>
-* TODO learn org mode
+* DONE learn org mode
 ** DONE org basic <2021-12-04 周六>
 ** DONE org agenda <2021-12-04 周六>
-** TODO stash org files to git  <2021-12-05 周日>
+** DONE stash org files to git  <2021-12-05 周日>
 * DONE buy something <2021-12-05 周日>
 * TODO go over SRP techs <2021-12-05 周日 20:00>
+* TODO GamePlay demo
+** DONE <2021-12-07 周二> camera controller
+** DONE <2021-12-07 周二> house buildings
+** DONE <2021-12-08 周三> add paths
+** DONE <2021-12-08 周三> mountain model
+** DONE <2021-12-08 周三> mountain shader
+** DONE <2021-12-08 周三> camera controller with mouse
+*** TODO [#B] <2021-12-13 周一> fix y axis bug
+** DONE [#A] <2021-12-09 周四> rebuild all materials
+** DONE [#B] <2021-12-09 周四> arrange scene
+** TODO <2021-12-13 周一> boids
