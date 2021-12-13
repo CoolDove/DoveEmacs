@@ -32,11 +32,6 @@
 
 (require 'dove-web-search)
 
-;; this depends on MSYS2, resolve this later
-;; (use-package pdf-tools
-  ;; :ensure t
-  ;; :init (add-hook 'after-init-hook 'pdf-tools-install))
-
 (setq eww-search-prefix "https://www.bing.com/search?q=")
 
 (use-package org-bullets

@@ -9,18 +9,18 @@
 						  charset (font-spec :family "Microsoft Yahei Mono" :size 16))))
 
 ;; theme
-(when (display-graphic-p)
-	;; (use-package gruvbox-theme
-		;; :init   (load-theme 'gruvbox-dark-soft t)
-		;; :ensure t)
-	(load-theme 'misterioso)
-	(use-package ivy-posframe
-	:ensure t
-	:after  (ivy)
-	:hook   (prog-mode . ivy-posframe-mode)
-	:config (setq ivy-posframe-display-function-alist '((t . ivy-posframe-display-at-frame-center)))
-	)
-)
+;; (when (display-graphic-p)
+	;; ;; (use-package gruvbox-theme
+		;; ;; :init   (load-theme 'gruvbox-dark-soft t)
+		;; ;; :ensure t)
+	;; (load-theme 'misterioso)
+	;; (use-package ivy-posframe
+	;; :ensure t
+	;; :after  (ivy)
+	;; :hook   (prog-mode . ivy-posframe-mode)
+	;; :config (setq ivy-posframe-display-function-alist '((t . ivy-posframe-display-at-frame-center)))
+	;; )
+;; )
 
 (use-package smart-mode-line
   :init
