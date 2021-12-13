@@ -73,6 +73,29 @@
   (kbd "<f12>")  'dws-last
 )
 
+;; lsp find
+(eval-after-load 'lsp-mode
+  (evil-define-key '(normal visual motion insert) 'global
+    (kbd "M-RET") 'lsp-completion-mode
+    (kbd "<leader>C-d") 'lsp-find-definition
+    (kbd "<leader>C-c") 'lsp-find-declaration
+    (kbd "<leader>C-r") 'lsp-find-references
+    (kbd "<leader>C-i") 'lsp-find-implementation))
+
+(setq dove-lsp-ui-doc-showing nil)
+(defun dove-toggle-lsp-doc ()
+    (interactive)
+    (if dove-lsp-ui-doc-showing
+	    (progn (lsp-ui-doc-hide)
+		    (setq dove-lsp-ui-doc-showing nil))
+	    (lsp-ui-doc-show)
+	    (setq dove-lsp-ui-doc-showing t)))
+
+(eval-after-load 'lsp-ui
+    (evil-define-key '(normal visual motion insert) 'global (kbd "C-d") 'dove-toggle-lsp-doc)
+)
+
+
 (if (display-graphic-p)
 	(evil-define-key '(visual) 'global (kbd "?")   #'youdao-dictionary-search-at-point-tooltip)
     ;; else

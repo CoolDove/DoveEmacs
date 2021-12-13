@@ -2,6 +2,7 @@
 * DONE learn org mode
 ** DONE org basic <2021-12-04 周六>
 ** DONE org agenda <2021-12-04 周六>
+
 ** DONE stash org files to git  <2021-12-05 周日>
 * DONE buy something <2021-12-05 周日>
 * TODO go over SRP techs <2021-12-05 周日 20:00>
@@ -16,3 +17,6 @@
 ** DONE [#A] <2021-12-09 周四> rebuild all materials
 ** DONE [#B] <2021-12-09 周四> arrange scene
 ** TODO <2021-12-13 周一> boids
+
+* DONE path renderer <2021-12-06 周一 23:00>
+* TODO <2021-12-13 周一 23:00> fix windows time zone problem 
