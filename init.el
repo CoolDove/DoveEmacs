@@ -22,16 +22,8 @@
 (require 'init-evil)
 (require 'init-tools)
 
-(unless (display-graphic-p)
-    (require 'dove-windows-terminal)
-)
-
 (require 'init-ui)
 (require 'init-highlight)
 
-(require 'dove-org-gtd)
-
-; learning elisp
-; (require 'dove)
 (server-start)
-;;************************
+

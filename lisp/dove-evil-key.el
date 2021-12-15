@@ -44,7 +44,9 @@
   (kbd "C-M-j") 'dove-split-window-to-down
   (kbd "C-M-k") 'evil-window-split
   (kbd "C-M-h") 'evil-window-vsplit
+  (kbd "C-M-u") 'evil-window-vsplit
   (kbd "C-M-l") 'dove-split-window-to-right
+  (kbd "C-M-i") 'dove-split-window-to-right
 )
 
 ;; bookmark operations
