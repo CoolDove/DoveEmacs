@@ -11,6 +11,9 @@
              :diminish ivy-mode
              :hook (after-init . ivy-mode))
 
+(use-package popup-kill-ring
+  :ensure t)
+
 (use-package restart-emacs
              :ensure t)
 

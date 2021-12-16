@@ -9,6 +9,9 @@
 (evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>g") 'magit)
 (evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>a") 'org-agenda)
 
+;; 
+(evil-define-key '(normal visual motion insert) 'global (kbd "M-p") 'popup-kill-ring)
+
 ;; cursor movement and navigation
 (evil-define-key '(normal visual motion) 'global
   (kbd "C-l") 'evil-end-of-line

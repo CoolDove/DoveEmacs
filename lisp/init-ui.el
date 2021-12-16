@@ -16,8 +16,8 @@
       ;; (setq sml/no-confirm-load-theme  t)
       ;; (sml/setup)
 ;; )
-
-(setq frame-title-format (concat "@Dove   < " (directory-file-name (abbreviate-file-name default-directory)) " >"))
+ 
+(setq frame-title-format (concat "emacs is terribly slow!" (format-time-string "    [%Y-%m-%d, %a]")))
 
 (use-package dimmer
   :ensure t
@@ -25,6 +25,12 @@
   :config
   (dimmer-configure-magit)
   (dimmer-configure-posframe))
+
+(with-eval-after-load 'markdown-mode
+    (set-face-font 'markdown-inline-code-face "Consolas-13")
+    (set-face-foreground 'markdown-inline-code-face "#ea6712")
+    (set-face-attribute 'markdown-inline-code-face nil :underline t)
+)
 
 (require 'zone)
 (zone-when-idle 180)
