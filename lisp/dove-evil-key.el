@@ -11,7 +11,7 @@
 
 ;; 
 (evil-define-key '(normal visual motion insert) 'global (kbd "M-p") 'popup-kill-ring)
-(evil-define-key '(normal) 'global (kbd "!") 'shell-command)
+
 
 ;; cursor movement and navigation
 (evil-define-key '(normal visual motion) 'global
@@ -75,6 +75,8 @@
   (kbd "C-<f3>") 'goto-last-change-reverse
   (kbd "<f5>")   'eval-region
   (kbd "C-<f5>") 'eval-expression
+  (kbd "<f7>")   'shell-command
+  (kbd "<S-f7>") '(lambda (cmd) (interactive "sshell command to string:") (insert (shell-command-to-string cmd)))
   (kbd "<f10>")  'toggle-menu-bar-mode-from-frame
   (kbd "<f12>")  'dws-last
 )
