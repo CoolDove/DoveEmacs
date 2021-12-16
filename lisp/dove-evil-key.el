@@ -11,6 +11,7 @@
 
 ;; 
 (evil-define-key '(normal visual motion insert) 'global (kbd "M-p") 'popup-kill-ring)
+(evil-define-key '(normal) 'global (kbd "!") 'shell-command)
 
 ;; cursor movement and navigation
 (evil-define-key '(normal visual motion) 'global
