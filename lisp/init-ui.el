@@ -29,7 +29,11 @@
 (with-eval-after-load 'markdown-mode
     (set-face-font 'markdown-inline-code-face "Consolas-13")
     (set-face-foreground 'markdown-inline-code-face "#ea6712")
-    (set-face-attribute 'markdown-inline-code-face nil :underline t)
+    (set-face-attribute 'markdown-inline-code-face nil :italic t)
+
+    (set-face-font 'markdown-pre-face "Consolas-13")
+    (set-face-foreground 'markdown-pre-face "#ea6712")
+    (set-face-attribute 'markdown-pre-face nil :italic t)
 )
 
 (require 'zone)

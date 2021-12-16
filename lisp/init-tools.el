@@ -31,4 +31,8 @@
   :ensure t
   :hook (org-mode . (lambda () (org-bullets-mode 1))))
 
+(defun dove-explorer-here (dir)
+  (interactive "Dexplorer at: ")
+  (shell-command (string-replace "/" (char-to-string 92) (concat "explorer.exe " dir))))
+
 (provide 'init-tools)
