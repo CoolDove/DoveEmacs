@@ -13,7 +13,7 @@
 ** DONE <2021-12-08 周三> mountain model
 ** DONE <2021-12-08 周三> mountain shader
 ** DONE <2021-12-08 周三> camera controller with mouse
-*** TODO [#B] <2021-12-13 周一> fix y axis bug
+*** DONE [#B] <2021-12-13 周一> fix y axis bug
 ** DONE [#A] <2021-12-09 周四> rebuild all materials
 ** DONE [#B] <2021-12-09 周四> arrange scene
 ** DONE <2021-12-13 周一> boids
@@ -21,3 +21,8 @@
 * DONE <2021-12-06 周一 23:00> path renderer 
 
 * TODO <2021-12-13 周一 23:00> fix windows time zone problem 
+
+* TODO <2021-12-16 周四> SceneViewGUI
+* TODO <2021-12-16 周四> EditorTool
+* TODO <2021-12-16 周四 22:00> emacs config: markdown code face
+* TODO <2021-12-16 周四 22:00> emacs config: org agenda using directory
