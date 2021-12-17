@@ -9,6 +9,8 @@
 (evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>g") 'magit)
 (evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>a") 'org-agenda)
 
+(evil-define-key '(normal visual motion insert) 'global (kbd "M-p") 'popup-kill-ring)
+
 ;; cursor movement and navigation
 (evil-define-key '(normal visual motion) 'global
   (kbd "C-l") 'evil-end-of-line
@@ -71,6 +73,9 @@
   (kbd "C-<f3>") 'goto-last-change-reverse
   (kbd "<f5>")   'eval-region
   (kbd "C-<f5>") 'eval-expression
+  (kbd "<f7>")   'dove-explorer-here
+  (kbd "<f8>")   'shell-command
+  (kbd "<S-f8>") '(lambda (cmd) (interactive "sshell command to string:") (insert (shell-command-to-string cmd)))
   (kbd "<f10>")  'toggle-menu-bar-mode-from-frame
   (kbd "<f12>")  'dws-last
 )
