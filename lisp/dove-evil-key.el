@@ -68,7 +68,6 @@
 
 ;; f number
 (evil-define-key '(normal visual motion) 'global
-  (kbd "<f2>")   'lsp-rename
   (kbd "<f3>")   'goto-last-change
   (kbd "C-<f3>") 'goto-last-change-reverse
   (kbd "<f5>")   'eval-region

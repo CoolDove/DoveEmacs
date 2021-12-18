@@ -1,4 +1,5 @@
 (require 'org-agenda)
-(push "~/.emacs.d/dorg/task.org" org-agenda-files)
+(setq org-agenda-files '("~/.emacs.d/dorg/cocowork.org"
+						 "~/.emacs.d/dorg/dove.org"))
 
 (provide 'dove-org-gtd)

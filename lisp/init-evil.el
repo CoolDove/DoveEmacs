@@ -32,4 +32,9 @@
   :hook (evil-local-mode . anzu-mode)
   :config (global-anzu-mode 1))
 
+;; Make sure that the bash executable can be found
+(setq explicit-shell-file-name "C:/Program Files/Git/bin/bash.exe")
+(setq shell-file-name explicit-shell-file-name)
+(add-to-list 'exec-path "C:/Program Files/Git/bin")
+
 (provide 'init-evil)
