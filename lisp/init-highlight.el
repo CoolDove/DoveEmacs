@@ -20,11 +20,11 @@
 		(set-face-background 'region "#347846")
 		(set-face-foreground 'region "#efefdd")
 	    (set-face-background 'show-paren-match "#00000000")
-	    (set-face-attribute 'show-paren-match nil :underline t)
+	    (set-face-attribute  'show-paren-match nil :underline t)
 	    (set-face-foreground 'show-paren-match "#00ea66")
+
+	    (set-face-attribute 'mode-line nil :box t)
 	)
-	; Terminal highlight
-    ;; (dove-highlight-text-terminal)
 )
 
 (provide 'init-highlight)

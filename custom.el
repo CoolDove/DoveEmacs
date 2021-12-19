@@ -50,7 +50,7 @@
  '(org-agenda-files
    '("~/.emacs.d/dorg/dove.org" "~/.emacs.d/dorg/cocowork.org" "~/.emacs.d/dorg/dove.org" "~/.emacs.d/dorg/cocowork.org"))
  '(package-selected-packages
-   '(w3m popup-kill-ring kill-ring markdown-toc csharp-mode org-bullets heaven-and-hell darkroom pdf-tools dim eldoc-box dimmer diminish auto-dim-other-buffers mosey find-file-rg web-search quick-peek zoom-window on-screen elscreen centaur-tabs magit evil-ex-shell-command evil-visualstar goto-last-change undo-tree counsel shader-mode hlsl-mode eglot glsl-mode deadgrep evil-mc evil-anzu dove-linum pyim youdao-dictionary use-package smooth-scroll smart-mode-line restart-emacs projectile poly-markdown omnisharp ivy-posframe indent-guide gruvbox-theme evil-surround company all-the-icons))
+   '(visible-mark back-button devdocs-browser markdown-preview-eww w3m popup-kill-ring kill-ring markdown-toc csharp-mode org-bullets heaven-and-hell darkroom pdf-tools dim eldoc-box dimmer diminish auto-dim-other-buffers mosey find-file-rg web-search quick-peek zoom-window on-screen elscreen centaur-tabs magit evil-ex-shell-command evil-visualstar goto-last-change undo-tree counsel shader-mode hlsl-mode eglot glsl-mode deadgrep evil-mc evil-anzu dove-linum pyim youdao-dictionary use-package smooth-scroll smart-mode-line restart-emacs projectile poly-markdown omnisharp ivy-posframe indent-guide gruvbox-theme evil-surround company all-the-icons))
  '(safe-local-variable-values '((eval when (fboundp 'rainbow-mode) (rainbow-mode 1))))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)

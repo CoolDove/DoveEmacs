@@ -8,14 +8,13 @@
         (set-fontset-font (frame-parameter nil 'font)
 						  charset (font-spec :family "Microsoft Yahei Mono" :size 16))))
 
-;; (use-package smart-mode-line
-  ;; :init
-	  ;; (if (display-graphic-p)
-		  ;; (setq sml/theme 'respectful)
-		  ;; (setq sml/theme 'light))
-      ;; (setq sml/no-confirm-load-theme  t)
-      ;; (sml/setup)
-;; )
+(use-package smart-mode-line
+  :init
+	  (if (display-graphic-p)
+		  (setq sml/theme 'dark))
+      (setq sml/no-confirm-load-theme  t)
+      (sml/setup)
+)
  
 (setq frame-title-format (concat "emacs is terribly slow!" (format-time-string "    [%Y-%m-%d, %a]")))
 
