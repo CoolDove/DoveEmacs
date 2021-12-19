@@ -12,5 +12,5 @@
 *** DONE <2021-12-13 周一> boids
 
 ** Curve Object Instancing
-*** TODO <2021-12-19 周日> learn about convex hull algrithms           :math:
-
+*** DONE <2021-12-19 周日> learn about convex hull algrithms           :math:
+*** TODO <2021-12-20 周一> polygon separation                          :math:
