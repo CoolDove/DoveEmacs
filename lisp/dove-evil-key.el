@@ -9,7 +9,22 @@
 (evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>g") 'magit)
 (evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>a") 'org-agenda)
 
-(evil-define-key '(normal visual motion insert) 'global (kbd "M-p") 'popup-kill-ring)
+(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>e") 'devdocs-browser-open)
+(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>E") 'devdocs-browser-open-in)
+
+(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>n") 'dove-set-snip-name)
+(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>d") 'dove-set-snip-dir)
+(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>k") 'dove-snip-save-to-target)
+(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>j") 'dove-snip-save)
+(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>i") 'dove-paste-post)
+
+;; back-button
+(evil-define-key '(normal visual motion insert operator) 'global
+  (kbd "M-i")   'back-button-local-forward
+  (kbd "M-u")   'back-button-local-backward
+  (kbd "C-M-i") 'back-button-global-forward
+  (kbd "C-M-u") 'back-button-global-backward
+)
 
 ;; cursor movement and navigation
 (evil-define-key '(normal visual motion) 'global
@@ -46,9 +61,7 @@
   (kbd "C-M-j") 'dove-split-window-to-down
   (kbd "C-M-k") 'evil-window-split
   (kbd "C-M-h") 'evil-window-vsplit
-  (kbd "C-M-u") 'evil-window-vsplit
   (kbd "C-M-l") 'dove-split-window-to-right
-  (kbd "C-M-i") 'dove-split-window-to-right
 )
 
 ;; bookmark operations
@@ -68,12 +81,13 @@
 
 ;; f number
 (evil-define-key '(normal visual motion) 'global
-  (kbd "<f2>")   'lsp-rename
+  (kbd "<f2>")   'dove-paste-post
+  (kbd "C-<f2>") 'dove-snip-save
   (kbd "<f3>")   'goto-last-change
   (kbd "C-<f3>") 'goto-last-change-reverse
   (kbd "<f5>")   'eval-region
   (kbd "C-<f5>") 'eval-expression
-  (kbd "<f7>")   'dove-explorer-here
+  (kbd "<f7>")   'dove-wterminal-here
   (kbd "<f8>")   'shell-command
   (kbd "<S-f8>") '(lambda (cmd) (interactive "sshell command to string:") (insert (shell-command-to-string cmd)))
   (kbd "<f10>")  'toggle-menu-bar-mode-from-frame

@@ -1,0 +1,16 @@
+* 3D Research
+** GamePlay demo
+*** DONE <2021-12-07 周二> camera controller
+*** DONE <2021-12-07 周二> house buildings
+*** DONE <2021-12-08 周三> add paths
+*** DONE <2021-12-08 周三> mountain model
+*** DONE <2021-12-08 周三> mountain shader
+*** DONE <2021-12-08 周三> camera controller with mouse
+**** DONE [#B] <2021-12-13 周一> fix y axis bug
+*** DONE [#A] <2021-12-09 周四> rebuild all materials
+*** DONE [#B] <2021-12-09 周四> arrange scene
+*** DONE <2021-12-13 周一> boids
+
+** Curve Object Instancing
+*** TODO <2021-12-19 周日> learn about convex hull algrithms           :math:
+

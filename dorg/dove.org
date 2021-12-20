@@ -1,0 +1,19 @@
+* Learn Something
+** DONE learn org mode
+*** DONE org basic <2021-12-04 周六>
+*** DONE org agenda <2021-12-04 周六>
+** DONE go over SRP techs <2021-12-05 周日 20:00>
+** DONE <2021-12-06 周一 23:00> path renderer 
+
+* Learn More About Emacs Org
+** DONE <2021-12-19 周日> [#B] Org Agenda things                     :emacs:
+** TODO <2021-12-19 周日> [#B] Directory in modeline           :emacs:
+ 
+* Learn Computational Geometry
+** DONE <2021-12-19 周日> [#A] ConvexHull                             :math:
+** TODO <2021-12-19 周日 23:00> [#A] Note Matrix & Determinant Part   :math:
+   things about calculating determinant and its meaning, use...
+
+* daily todo
+** DONE stash org files to git  <2021-12-05 周日>
+** DONE <2021-12-18 周六 23:00> fix windows time zone problem 
