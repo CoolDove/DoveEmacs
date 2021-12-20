@@ -6,7 +6,8 @@
 ** DONE stash org files to git  <2021-12-05 周日>
 * DONE buy something <2021-12-05 周日>
 * DONE go over SRP techs <2021-12-05 周日 20:00>
-* TODO GamePlay demo
+
+* TODO <2021-12-31 周五> GamePlay demo
 ** DONE <2021-12-07 周二> camera controller
 ** DONE <2021-12-07 周二> house buildings
 ** DONE <2021-12-08 周三> add paths
@@ -20,9 +21,9 @@
 
 * DONE <2021-12-06 周一 23:00> path renderer 
 
-* TODO <2021-12-13 周一 23:00> fix windows time zone problem 
+* DONE <2021-12-16 周四 22:00> emacs config: markdown code face
+* DONE <2021-12-16 周四 22:00> emacs config: org agenda using directory
 
-* TODO <2021-12-16 周四> SceneViewGUI
-* TODO <2021-12-16 周四> EditorTool
-* TODO <2021-12-16 周四 22:00> emacs config: markdown code face
-* TODO <2021-12-16 周四 22:00> emacs config: org agenda using directory
+* TODO <2021-12-17 周五> SceneViewGUI
+* TODO <2021-12-17 周五> EditorTool
+* TODO <2021-12-17 周五 23:00> fix windows time zone problem 

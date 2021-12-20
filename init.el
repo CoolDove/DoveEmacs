@@ -25,5 +25,7 @@
 (require 'init-ui)
 (require 'init-highlight)
 
+(require 'dove-org-gtd)
+
 (server-start)
 
