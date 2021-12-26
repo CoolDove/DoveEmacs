@@ -5,7 +5,7 @@
 ** DONE go over SRP techs <2021-12-05 周日 20:00>
 ** DONE <2021-12-06 周一 23:00> path renderer 
 
-* Learn More About Emacs Org
+* Emacs
 ** DONE <2021-12-19 周日> [#B] Org Agenda things                     :emacs:
 ** TODO <2021-12-25 周六> [#C] Directory in modeline                 :emacs:
 ** TODO <2021-12-25 周六> [#C] Correct update.bat                    :emacs:
@@ -18,7 +18,7 @@
 
 * Learn Something
 ** TODO <2021-12-24 周五> [#B] take a look at Plasma                  :math:
-** TODO <2021-12-23 周四> [#B] Yemi's Oil Painting Shader [Yemi NPR](https://yemi.me/2018/03/11/shader-npr-oilpaint/) :shader:
+** DONE <2021-12-23 周四> [#B] Yemi's Oil Painting Shader [Yemi NPR](https://yemi.me/2018/03/11/shader-npr-oilpaint/) :shader:
 
 * daily todo
 ** DONE stash org files to git  <2021-12-05 周日>
