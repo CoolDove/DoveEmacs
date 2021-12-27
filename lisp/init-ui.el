@@ -8,6 +8,9 @@
         (set-fontset-font (frame-parameter nil 'font)
 						  charset (font-spec :family "Microsoft Yahei Mono" :size 16))))
 
+(use-package obsidian-theme
+	:ensure t)
+
 (use-package smart-mode-line
   :init
 	  (if (display-graphic-p)
