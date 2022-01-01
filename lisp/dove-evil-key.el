@@ -18,6 +18,14 @@
 (evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>j") 'dove-snip-save)
 (evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>i") 'dove-paste-post)
 
+(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>p") 'deadgrep)
+
+(evil-define-key 'emacs deadgrep-mode-map
+  (kbd "j") #'(lambda () (interactive) (deadgrep-forward))
+  (kbd "M-j") #'(lambda () (interactive) (deadgrep-forward-filename))
+  (kbd "k") #'(lambda () (interactive) (deadgrep-backward))
+  (kbd "M-k") #'(lambda () (interactive) (deadgrep-backward-filename)))
+
 ;; back-button
 (evil-define-key '(normal visual motion insert operator) 'global
   (kbd "M-i")   'back-button-local-forward

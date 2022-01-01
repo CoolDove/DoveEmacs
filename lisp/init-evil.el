@@ -1,9 +1,25 @@
+(require 'pulse)
+(defface dove/evil-yank-flash
+  '((t :foreground "black"
+	   :background "green"
+	   :underline t))
+  "evil yank flash")
+
+(defun dove/evil-yank-advice (orig-fn beg end &rest args)
+  (if (not (eq evil-state 'visual))
+      (pulse-momentary-highlight-region beg end 'dove/evil-yank-flash))
+  (apply orig-fn beg end args))
+
 (use-package evil
   :init   (evil-mode 1)
   :ensure t
   :config (require 'dove-evil-key)
-          (setq evil-auto-indent nil)
-		  (evil-set-undo-system 'undo-tree))
+          (setq evil-auto-indent t
+		        evil-shift-width 4
+				evil-want-C-w-in-emacs-state t
+				evil-search-module 'evil-search)
+		  (evil-set-undo-system 'undo-tree)
+		  (advice-add 'evil-yank :around 'dove/evil-yank-advice))
 
 (use-package undo-tree
   :after (evil)

@@ -20,6 +20,9 @@
 ** TODO <2021-12-24 周五> [#B] take a look at Plasma                  :math:
 ** DONE <2021-12-23 周四> [#B] Yemi's Oil Painting Shader [Yemi NPR](https://yemi.me/2018/03/11/shader-npr-oilpaint/) :shader:
 
+* dove work
+** TODO <2022-01-01 周六> [#A] CommandBufferExtension , like CommandBuffer.DrawLine(), CommandBuffer.DrawSphere()
+
 * daily todo
 ** DONE stash org files to git  <2021-12-05 周日>
 ** DONE <2021-12-18 周六 23:00> fix windows time zone problem 

@@ -24,6 +24,10 @@
 
 (setq eww-search-prefix "https://www.bing.com/search?q=")
 
+(use-package deadgrep
+  :ensure t
+  :config (evil-set-initial-state 'deadgrep-mode 'emacs))
+
 (use-package org-bullets
   :ensure t
   :hook (org-mode . (lambda () (org-bullets-mode 1))))
