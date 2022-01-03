@@ -1,8 +1,6 @@
 (require 'pulse)
 (defface dove/evil-yank-flash
-  '((t :foreground "black"
-	   :background "green"
-	   :underline t))
+  '((t :background "orange"))
   "evil yank flash")
 
 (defun dove/evil-yank-advice (orig-fn beg end &rest args)
