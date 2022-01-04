@@ -16,7 +16,7 @@
 	(progn
 		(add-hook 'prog-mode-hook 'dove-note-highlight)
 		(evil-set-cursor-color "green")
-        (set-face-foreground font-lock-comment-face "#4f6534")
+        (set-face-foreground font-lock-comment-face "#6f8555")
 		(set-face-background 'region "#347846")
 		(set-face-foreground 'region "#efefdd")
 	    (set-face-background 'show-paren-match "#00000000")
