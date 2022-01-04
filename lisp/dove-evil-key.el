@@ -5,26 +5,26 @@
 
 (evil-set-leader '(normal visual motion operator) (kbd "<tab>"))
 
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>r") 'read-only-mode)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>g") 'magit)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>a") 'org-agenda)
-
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>e") 'devdocs-browser-open)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>E") 'devdocs-browser-open-in)
-
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>n") 'dove-set-snip-name)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>d") 'dove-set-snip-dir)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>k") 'dove-snip-save-to-target)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>j") 'dove-snip-save)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>i") 'dove-paste-post)
-
-;; back-button
 (evil-define-key '(normal visual motion insert operator) 'global
-  (kbd "M-i")   'back-button-local-forward
-  (kbd "M-u")   'back-button-local-backward
-  (kbd "C-M-i") 'back-button-global-forward
-  (kbd "C-M-u") 'back-button-global-backward
-)
+  (kbd "<leader>r") #'read-only-mode
+  (kbd "<leader>g") #'magit
+  (kbd "<leader>a") #'org-agenda
+  (kbd "<leader>e") #'devdocs-browser-open
+  (kbd "<leader>E") #'devdocs-browser-open-in
+  (kbd "<leader>n") #'dove-set-snip-name
+  (kbd "<leader>d") #'dove-set-snip-dir
+  (kbd "<leader>k") #'dove-snip-save-to-target
+  (kbd "<leader>j") #'dove-snip-save
+  (kbd "<leader>i") #'dove-paste-post
+  (kbd "<leader>/") #'youdao-dictionary-search-at-point+)
+
+(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>p") #'deadgrep)
+
+(evil-define-key 'emacs deadgrep-mode-map
+  (kbd "j") #'(lambda () (interactive) (deadgrep-forward))
+  (kbd "M-j") #'(lambda () (interactive) (deadgrep-forward-filename))
+  (kbd "k") #'(lambda () (interactive) (deadgrep-backward))
+  (kbd "M-k") #'(lambda () (interactive) (deadgrep-backward-filename)))
 
 ;; cursor movement and navigation
 (evil-define-key '(normal visual motion) 'global
@@ -72,11 +72,16 @@
 )
 
 ;; window size
-(evil-define-key '(normal visual motion) 'global
+(evil-define-key '(normal visual motion emacs) 'global
   (kbd "=") 'evil-window-increase-width
   (kbd "-") 'evil-window-decrease-width
   (kbd "+") 'evil-window-increase-height
   (kbd "_") 'evil-window-decrease-height
+)
+
+;; edit
+(evil-define-key '(normal visual) 'global
+  (kbd "M-p") 'yank-from-kill-ring
 )
 
 ;; f number
@@ -94,8 +99,6 @@
   (kbd "<f10>")  'toggle-menu-bar-mode-from-frame
   (kbd "<f12>")  'dws-last
 )
-
-(evil-define-key '(visual) 'global (kbd "?")   #'youdao-dictionary-search-at-point+)
 
 (evil-define-key '(normal visual motion) 'global (kbd "C-x C-p") 'find-file-rg)
 

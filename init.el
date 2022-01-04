@@ -27,5 +27,7 @@
 
 (require 'dove-org-gtd)
 
+(require 'other)
+
 (server-start)
 

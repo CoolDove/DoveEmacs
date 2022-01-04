@@ -19,7 +19,7 @@
       (sml/setup)
 )
  
-(setq frame-title-format (concat "emacs is terribly slow!" (format-time-string "    [%Y-%m-%d, %a]")))
+(setq frame-title-format (concat "emacs is shit!!!" (format-time-string "    [%Y-%m-%d, %a]")))
 
 (use-package dimmer
   :ensure t
