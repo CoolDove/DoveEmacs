@@ -4,6 +4,8 @@
   :ensure t)
 (use-package csharp-mode
   :ensure t)
+(use-package gdscript-mode
+  :ensure t)
 
 (use-package company
              :hook((prog-mode) . company-mode)
