@@ -101,4 +101,13 @@
 
 (evil-define-key '(normal visual motion) 'global (kbd "C-x C-p") 'find-file-rg)
 
+
+;; keybindings for specific mode
+(evil-define-key '(normal visual motion) markdown-mode-map
+  (kbd "C-k") #'outline-previous-heading
+  (kbd "C-j") #'outline-next-heading
+  (kbd "<leader>h") #'outline-toggle-children
+  (kbd "<leader>l") #'(lambda () (interactive) (insert "$$") (backward-char) (evil-insert-state))
+)
+
 (provide 'dove-evil-key)
