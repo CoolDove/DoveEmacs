@@ -26,5 +26,13 @@
 *** TODO <2021-12-24 周五> fix bug: rtcurve's curve null after starting (save to local)
 *** TODO <2021-12-24 周五> add feature: auto realloc ComputeBuffer for instancing data
 
+** Auqarium
+*** TODO <2022-01-10> rope slot
+*** TODO <2022-01-10> fix GameSystemRelease After UnityEditor closed
+*** TODO <2022-01-10> fix GameSystem multi init
+*** TODO <2022-01-10> fix player movement(outer collider)
+
+
 ** Scriptable Render Pipeline
 *** DONE <2021-12-20 周一 15:00> outline pass
+
