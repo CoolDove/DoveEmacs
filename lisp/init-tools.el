@@ -21,9 +21,7 @@
   :ensure t)
 
 (require 'dove-web-search)
-
 (setq eww-search-prefix "https://www.bing.com/search?q=")
-
 
 (require 'init-deadgrep)
 

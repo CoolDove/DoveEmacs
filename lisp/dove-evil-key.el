@@ -15,6 +15,7 @@
   (kbd "<leader>d") #'dove-set-snip-dir
   (kbd "<leader>k") #'dove-snip-save-to-target
   (kbd "<leader>j") #'dove-snip-save
+  (kbd "<leader>s") #'occur
   (kbd "<leader>i") #'dove-paste-post
   (kbd "<leader>/") #'youdao-dictionary-search-at-point+)
 
@@ -25,6 +26,10 @@
   (kbd "M-j") #'(lambda () (interactive) (deadgrep-forward-filename))
   (kbd "k") #'(lambda () (interactive) (deadgrep-backward))
   (kbd "M-k") #'(lambda () (interactive) (deadgrep-backward-filename)))
+
+(evil-define-key 'emacs occur-mode-map
+  (kbd "j") #'(lambda () (interactive) (occur-next))
+  (kbd "k") #'(lambda () (interactive) (occur-prev)))
 
 ;; cursor movement and navigation
 (evil-define-key '(normal visual motion) 'global
@@ -72,7 +77,7 @@
 )
 
 ;; window size
-(evil-define-key '(normal visual motion emacs) 'global
+(evil-define-key '(normal visual motion) 'global
   (kbd "=") 'evil-window-increase-width
   (kbd "-") 'evil-window-decrease-width
   (kbd "+") 'evil-window-increase-height
@@ -101,5 +106,14 @@
 )
 
 (evil-define-key '(normal visual motion) 'global (kbd "C-x C-p") 'find-file-rg)
+
+
+;; keybindings for specific mode
+(evil-define-key '(normal visual motion) markdown-mode-map
+  (kbd "C-k") #'outline-previous-heading
+  (kbd "C-j") #'outline-next-heading
+  (kbd "<leader>h") #'outline-toggle-children
+  (kbd "<leader>l") #'(lambda () (interactive) (insert "$$") (backward-char) (evil-insert-state))
+)
 
 (provide 'dove-evil-key)
