@@ -15,11 +15,10 @@
   (kbd "<leader>d") #'dove-set-snip-dir
   (kbd "<leader>k") #'dove-snip-save-to-target
   (kbd "<leader>j") #'dove-snip-save
-  (kbd "<leader>s") #'occur
   (kbd "<leader>i") #'dove-paste-post
   (kbd "<leader>/") #'youdao-dictionary-search-at-point+)
 
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>p") #'deadgrep)
+(evil-define-key '(normal visual motion operator) 'global (kbd "<leader>p") #'deadgrep)
 
 (evil-define-key 'emacs deadgrep-mode-map
   (kbd "j") #'(lambda () (interactive) (deadgrep-forward))
@@ -104,9 +103,6 @@
   (kbd "<f12>")  'dws-last
 )
 
-(evil-define-key '(normal visual motion) 'global (kbd "C-x C-p") 'find-file-rg)
-
-
 ;; keybindings for specific mode
 (evil-define-key '(normal visual motion) markdown-mode-map
   (kbd "C-k") #'outline-previous-heading
@@ -115,4 +111,8 @@
   (kbd "<leader>l") #'(lambda () (interactive) (insert "$$") (backward-char) (evil-insert-state))
 )
 
+(evil-define-key '(normal visual) 'global
+  (kbd "M-r") #'anzu-query-replace-regexp)
+
 (provide 'dove-evil-key)
+

@@ -8,13 +8,19 @@
         (set-fontset-font (frame-parameter nil 'font)
 						  charset (font-spec :family "Microsoft Yahei Mono" :size 16))))
 
-(use-package obsidian-theme
-	:ensure t)
+
+(add-hook 'prog-mode-hook #'display-line-numbers-mode 1)
+
+(set-face-attribute 'mode-line-inactive nil :underline t)
+
+(use-package railscasts-theme
+  :ensure t
+  :init (load-theme 'railscasts))
 
 (use-package smart-mode-line
   :init
 	  (if (display-graphic-p)
-		  (setq sml/theme 'dark))
+		  (setq sml/theme 'respectful))
       (setq sml/no-confirm-load-theme  t)
       (sml/setup)
 )
