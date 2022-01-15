@@ -9,9 +9,9 @@
 						  charset (font-spec :family "Microsoft Yahei Mono" :size 16))))
 
 
-(add-hook 'prog-mode-hook #'display-line-numbers-mode 1)
+(setq display-line-numbers-type 'relative)
+;; (add-hook 'prog-mode-hook #'display-line-numbers-mode 1)
 
-(set-face-attribute 'mode-line-inactive nil :underline t)
 
 (use-package railscasts-theme
   :ensure t
@@ -24,8 +24,10 @@
       (setq sml/no-confirm-load-theme  t)
       (sml/setup)
 )
+
+(set-face-attribute 'mode-line-inactive nil :underline t)
  
-(setq frame-title-format (concat "emacs is shit!!!" (format-time-string "    [%Y-%m-%d, %a]")))
+(setq frame-title-format (concat "emacs is almostly shit!!!" (format-time-string "    [%Y-%m-%d, %a]")))
 
 (use-package dimmer
   :ensure t
@@ -39,9 +41,9 @@
     (set-face-foreground 'markdown-inline-code-face "#ea6712")
     (set-face-attribute 'markdown-inline-code-face nil :italic t)
 
-    (set-face-font 'markdown-pre-face "Consolas-13")
-    (set-face-foreground 'markdown-pre-face "#ea6712")
-    (set-face-attribute 'markdown-pre-face nil :italic t)
+    (set-face-font 'markdown-pre-face "Consolas-14")
+    (set-face-foreground 'markdown-pre-face "#67ea12")
+    (set-face-attribute 'markdown-pre-face nil :bold t)
 )
 
 (require 'zone)

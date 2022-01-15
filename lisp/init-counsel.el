@@ -7,16 +7,19 @@
 
 ;; counsel, thank you
 (evil-define-key '(normal visual emacs) 'global
-    (kbd "M-p") 'counsel-yank-pop
-    (kbd "/") 'counsel-grep-or-swiper
-    (kbd "C-s") 'counsel-grep-or-swiper
+    (kbd "M-p") #'counsel-yank-pop
+    (kbd "C-s") #'swiper
 
-    (kbd "<leader>p") 'counsel-rg
-    (kbd "<leader>P") 'deadgrep
+    (kbd "<leader>p") #'counsel-rg
+    (kbd "<leader>P") #'deadgrep
 
-    (kbd "C-'") 'counsel-evil-registers
-    (kbd "<leader> m") 'counsel-evil-marks
+	(kbd "C-x b") #'counsel-switch-buffer
+
+    (kbd "C-'") #'counsel-evil-registers
+    (kbd "<leader> m") #'counsel-evil-marks
 )
+(evil-define-key '(normal visual emacs) prog-mode-map
+    (kbd "/") #'swiper)
 
 (evil-define-key '(normal visual) 'global
   (kbd "<leader>v") #'ivy-push-view

@@ -31,10 +31,6 @@
   :hook   (evil-local-mode . evil-surround-mode)
 )
 
-(use-package evil-visualstar
-  :ensure t
-  :hook (evil-local-mode . evil-visualstar-mode))
-
 (use-package popup
   :ensure t)
 (use-package pos-tip
