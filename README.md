@@ -1,6 +1,6 @@
 ## Dove Emacs Config
 
-## Simple branch
+## Simple branch(merged)
 this is a simplized version of my emacs config
 
 ### how to use
