@@ -19,6 +19,7 @@
 
 (use-package find-file-rg
   :ensure t)
+
 (evil-define-key '(normal visual motion emacs) 'global
   (kbd "C-x C-p") #'find-file-rg)
 

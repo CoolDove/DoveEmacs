@@ -1,5 +1,5 @@
-(use-package counsel
-  :ensure t)
+;; (use-package counsel
+  ;; :ensure t)
 
 (evil-define-key '(normal visual insert motion emacs) 'global
     (kbd "C-x C-f") #'counsel-find-file

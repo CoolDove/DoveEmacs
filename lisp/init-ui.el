@@ -3,10 +3,10 @@
 (menu-bar-mode   -1)
 
 ;; Chinese font in GUI mode
-(when (display-graphic-p)
-	(dolist (charset '(kana han symbol cjk-misc bopomofo))
-        (set-fontset-font (frame-parameter nil 'font)
-						  charset (font-spec :family "Microsoft Yahei Mono" :size 16))))
+;; (when (display-graphic-p)
+	;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
+        ;; (set-fontset-font (frame-parameter nil 'font)
+						  ;; charset (font-spec :family "Microsoft Yahei Mono" :size 16))))
 
 
 (setq display-line-numbers-type 'relative)
@@ -45,7 +45,6 @@
     (set-face-foreground 'markdown-pre-face "#67ea12")
     (set-face-attribute 'markdown-pre-face nil :bold t)
 )
-
 (require 'zone)
 (zone-when-idle 180)
 

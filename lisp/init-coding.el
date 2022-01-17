@@ -2,8 +2,6 @@
   :ensure t)
 (use-package shader-mode
   :ensure t)
-(use-package csharp-mode
-  :ensure t)
 (use-package gdscript-mode
   :ensure t)
 
