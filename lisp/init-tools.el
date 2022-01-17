@@ -19,6 +19,8 @@
 
 (use-package find-file-rg
   :ensure t)
+(evil-define-key '(normal visual motion emacs) 'global
+  (kbd "C-x C-p") #'find-file-rg)
 
 (require 'dove-web-search)
 (setq eww-search-prefix "https://www.bing.com/search?q=")
@@ -34,5 +36,9 @@
   (shell-command (concat "wt.exe -w 0 nt --tabColor \"#7ccf32\" -d " dir)))
 
 (require 'snipaste)
+
+(evil-set-initial-state 'eshell-mode 'emacs)
+
+(require 'init-counsel)
 
 (provide 'init-tools)

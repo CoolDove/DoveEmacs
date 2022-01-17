@@ -1,6 +1,3 @@
-(with-eval-after-load 'evil
-)
-
 (use-package deadgrep
   :ensure t
   :defer nil
