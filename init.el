@@ -1,5 +1,5 @@
 (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp")))
-(add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/vendor")))
+;; (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/vendor")))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 

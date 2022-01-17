@@ -92,7 +92,8 @@
   (kbd "<f8>")   'shell-command
   (kbd "<S-f8>") '(lambda (cmd) (interactive "sshell command to string:") (insert (shell-command-to-string cmd)))
   (kbd "<f10>")  'toggle-menu-bar-mode-from-frame
-  (kbd "<f12>")  'dws-last
+  ;; (kbd "<f12>")  'dws-last
+  (kbd "<f12>")  'lsp-describe-thing-at-point
 )
 
 ;; keybindings for specific mode

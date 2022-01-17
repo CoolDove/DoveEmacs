@@ -27,7 +27,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (setq-default scroll-step 1
-			  scroll-margin 20 
+			  scroll-margin 1 
 			  scroll-preserve-screen-position t
 			  scroll-up-aggressively 0.01
 			  scroll-down-aggressively 0.01
