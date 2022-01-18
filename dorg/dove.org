@@ -5,15 +5,25 @@
 ** DONE go over SRP techs <2021-12-05 周日 20:00>
 ** DONE <2021-12-06 周一 23:00> path renderer 
 
-* Learn More About Emacs Org
+* Emacs
 ** DONE <2021-12-19 周日> [#B] Org Agenda things                     :emacs:
-** TODO <2021-12-19 周日> [#B] Directory in modeline           :emacs:
+** TODO <2021-12-25 周六> [#C] Directory in modeline                 :emacs:
+** DONE <2021-12-25 周六> [#C] Correct update.bat                    :emacs:
  
 * Learn Computational Geometry
 ** DONE <2021-12-19 周日> [#A] ConvexHull                             :math:
-** TODO <2021-12-19 周日 23:00> [#A] Note Matrix & Determinant Part   :math:
-   things about calculating determinant and its meaning, use...
+** DONE <2021-12-26 周日 23:00> [#A] [偏导数 - 别看着我笑了 - bili](https://www.bilibili.com/video/BV1ar4y127eu?spm_id_from=333.999.0.0) :math:
+
+* Learn Something
+** TODO <2021-12-24 周五> [#B] take a look at Plasma                  :math:
+** DONE <2021-12-23 周四> [#B] Yemi's Oil Painting Shader [Yemi NPR](https://yemi.me/2018/03/11/shader-npr-oilpaint/) :shader:
+
+* dove work
+** TODO <2022-01-01 周六> [#A] CommandBufferExtension , like CommandBuffer.DrawLine(), CommandBuffer.DrawSphere()
 
 * daily todo
 ** DONE stash org files to git  <2021-12-05 周日>
 ** DONE <2021-12-18 周六 23:00> fix windows time zone problem 
+
+* TODO <2022-01-05 周三 23:00> [#A] Note Matrix & Determinant Part   :math:
+   things about calculating determinant and its meaning, use...

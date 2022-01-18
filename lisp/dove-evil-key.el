@@ -1,30 +1,26 @@
 (evil-define-key '(insert) 'global (kbd "<tab>") 'dove-indent)
 (evil-define-key '(insert) 'global (kbd "C-<backspace>") 'evil-delete-backward-word)
 
-;; (evil-define-key '(normal visual motion) 'global (kbd "RET") 'linum-mode)
+(evil-define-key '(normal visual motion) prog-mode-map (kbd "RET") 'display-line-numbers-mode)
 
 (evil-set-leader '(normal visual motion operator) (kbd "<tab>"))
 
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>r") 'read-only-mode)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>g") 'magit)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>a") 'org-agenda)
-
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>e") 'devdocs-browser-open)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>E") 'devdocs-browser-open-in)
-
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>n") 'dove-set-snip-name)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>d") 'dove-set-snip-dir)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>k") 'dove-snip-save-to-target)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>j") 'dove-snip-save)
-(evil-define-key '(normal visual motion insert operator) 'global (kbd "<leader>i") 'dove-paste-post)
-
-;; back-button
 (evil-define-key '(normal visual motion insert operator) 'global
-  (kbd "M-i")   'back-button-local-forward
-  (kbd "M-u")   'back-button-local-backward
-  (kbd "C-M-i") 'back-button-global-forward
-  (kbd "C-M-u") 'back-button-global-backward
-)
+  (kbd "<leader>r") #'read-only-mode
+  (kbd "<leader>g") #'magit
+  (kbd "<leader>a") #'org-agenda
+  (kbd "<leader>e") #'devdocs-browser-open
+  (kbd "<leader>E") #'devdocs-browser-open-in
+  (kbd "<leader>n") #'dove-set-snip-name
+  (kbd "<leader>d") #'dove-set-snip-dir
+  (kbd "<leader>k") #'dove-snip-save-to-target
+  (kbd "<leader>j") #'dove-snip-save
+  (kbd "<leader>i") #'dove-paste-post
+  (kbd "<leader>/") #'youdao-dictionary-search-at-point+)
+
+(evil-define-key 'emacs occur-mode-map
+  (kbd "j") #'(lambda () (interactive) (occur-next))
+  (kbd "k") #'(lambda () (interactive) (occur-prev)))
 
 ;; cursor movement and navigation
 (evil-define-key '(normal visual motion) 'global
@@ -57,7 +53,7 @@
   (evil-window-right 1)
 )
 
-(evil-define-key '(normal visual) 'global
+(evil-define-key '(normal visual emacs) 'global
   (kbd "C-M-j") 'dove-split-window-to-down
   (kbd "C-M-k") 'evil-window-split
   (kbd "C-M-h") 'evil-window-vsplit
@@ -79,6 +75,11 @@
   (kbd "_") 'evil-window-decrease-height
 )
 
+;; edit
+(evil-define-key '(normal visual) 'global
+  (kbd "M-p") 'yank-from-kill-ring
+)
+
 ;; f number
 (evil-define-key '(normal visual motion) 'global
   (kbd "<f2>")   'dove-paste-post
@@ -91,11 +92,20 @@
   (kbd "<f8>")   'shell-command
   (kbd "<S-f8>") '(lambda (cmd) (interactive "sshell command to string:") (insert (shell-command-to-string cmd)))
   (kbd "<f10>")  'toggle-menu-bar-mode-from-frame
-  (kbd "<f12>")  'dws-last
+  ;; (kbd "<f12>")  'dws-last
+  (kbd "<f12>")  'lsp-describe-thing-at-point
 )
 
-(evil-define-key '(visual) 'global (kbd "?")   #'youdao-dictionary-search-at-point+)
+;; keybindings for specific mode
+(evil-define-key '(normal visual motion) markdown-mode-map
+  (kbd "C-k") #'outline-previous-heading
+  (kbd "C-j") #'outline-next-heading
+  (kbd "<leader>h") #'outline-toggle-children
+  (kbd "<leader>l") #'(lambda () (interactive) (insert "$$") (backward-char) (evil-insert-state))
+)
 
-(evil-define-key '(normal visual motion) 'global (kbd "C-x C-p") 'find-file-rg)
+(evil-define-key '(normal visual) 'global
+  (kbd "M-r") #'anzu-query-replace-regexp)
 
 (provide 'dove-evil-key)
+

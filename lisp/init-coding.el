@@ -4,6 +4,8 @@
   :ensure t)
 (use-package csharp-mode
   :ensure t)
+(use-package gdscript-mode
+  :ensure t)
 
 (use-package company
              :hook((prog-mode) . company-mode)
@@ -20,5 +22,30 @@
                          ("C-k" . #'company-select-previous))
              :ensure t
 )
+
+(use-package lsp-mode
+             :ensure t
+             :init (setq lsp-keymap-prefix "C-c l")
+             :hook ((c++-mode      . lsp-deferred) (csharp-mode   . lsp-deferred))
+             :commands lsp
+			 :config (setq lsp-enable-symbol-highlighting   nil
+						   lsp-enable-file-watchers         nil
+						   lsp-eldoc-hook                   nil
+	                       lsp-headerline-breadcrumb-enable nil
+	                       lsp-log-io nil
+                           lsp-enable-folding nil 
+                           lsp-diagnostic-package nil
+                           lsp-enable-snippet nil
+	                       lsp-enable-links nil
+						   lsp-diagnostics--flycheck-enabled nil
+						   lsp-eldoc-render-all nil
+						   lsp-enable-indentation nil
+						   lsp-lens-auto-enable nil
+	                       lsp-restart 'auto-restart
+						   lsp-idle-delay 0.2)
+                     (setq gc-cons-threshold 100000000)
+                     (setq read-process-output-max (* 1024 1024))
+)
+
 
 (provide 'init-coding)
