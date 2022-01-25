@@ -26,5 +26,4 @@
 	;; )
 ;; )
 
-
 (provide 'init-highlight)
