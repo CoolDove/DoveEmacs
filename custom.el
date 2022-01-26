@@ -57,7 +57,6 @@
  '(pos-tip-foreground-color "#242728")
  '(safe-local-variable-values '((eval when (fboundp 'rainbow-mode) (rainbow-mode 1))))
  '(scroll-bar-mode nil)
- '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
  '(vc-annotate-background "#FFFFFD")

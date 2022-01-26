@@ -80,6 +80,8 @@
   (kbd "M-p") 'yank-from-kill-ring
 )
 
+(evil-define-key '(normal visual operator motion) 'global (kbd "M-u") 'evil-redo)
+
 ;; f number
 (evil-define-key '(normal visual motion) 'global
   (kbd "<f2>")   'dove-paste-post
@@ -95,6 +97,10 @@
   ;; (kbd "<f12>")  'dws-last
   (kbd "<f12>")  'lsp-describe-thing-at-point
 )
+
+;; 
+(evil-define-key '(normal visual motion ) 'global
+  (kbd "M-i") #'lsp-ivy-workspace-symbol)
 
 ;; keybindings for specific mode
 (evil-define-key '(normal visual motion) markdown-mode-map
