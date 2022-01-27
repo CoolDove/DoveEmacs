@@ -32,30 +32,36 @@
              ;; :hook ((c++-mode      . lsp-deferred))
              :commands lsp
 			 :config (setq lsp-enable-symbol-highlighting   nil
-						   lsp-enable-file-watchers         nil
+						   lsp-enable-file-watchers         t
+						   lsp-enable-on-type-formatting    nil
 						   lsp-eldoc-hook                   nil
 	                       lsp-headerline-breadcrumb-enable nil
-	                       lsp-log-io nil
-                           lsp-enable-folding nil 
-                           lsp-enable-snippet nil
-	                       lsp-enable-links nil
-						   lsp-modeline-diagnostics-enable nil
-						   lsp-diagnostics-provider :none
-						   lsp-eldoc-enable-hover nil
-						   lsp-enable-indentation nil
-						   lsp-modeline-diagnostics-enable nil
-						   lsp-signature-auto-activate nil
+	                       lsp-log-io                       nil
+                           lsp-enable-folding               nil 
+                           lsp-enable-snippet               nil
+	                       lsp-enable-links                 nil
+						   lsp-modeline-diagnostics-enable  nil
+						   lsp-diagnostics-provider         :none
+						   lsp-eldoc-enable-hover           nil
+						   lsp-enable-indentation           nil
+						   lsp-modeline-diagnostics-enable  nil
+						   lsp-signature-auto-activate      nil
 						   lsp-signature-render-documentation nil
-						   lsp-completion-show-detail nil
-						   lsp-completion-show-kind t
-						   lsp-lens-auto-enable nil
-	                       lsp-restart 'auto-restart
-						   lsp-idle-delay 0.1)
+						   lsp-completion-show-detail       nil
+						   lsp-completion-show-kind         t
+						   lsp-lens-auto-enable             nil
+	                       lsp-restart                      'auto-restart
+						   lsp-idle-delay                   0.1)
 			         (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.meta")
                      (setq gc-cons-threshold 10240)
                      (setq read-process-output-max (* 1024 1024)
 						   )
 )
 
+
+(with-eval-after-load 'lsp-mode 
+   (add-hook 'lsp-managed-mode-hook 
+          (lambda () 
+            (when lsp-enable-on-type-formatting (warn "You have lsp-enable-on-type-formatting set to t")))))
 
 (provide 'init-coding)
