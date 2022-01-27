@@ -1,7 +1,7 @@
 (evil-define-key '(insert) 'global (kbd "<tab>") 'dove-indent)
 (evil-define-key '(insert) 'global (kbd "C-<backspace>") 'evil-delete-backward-word)
 
-;; (evil-define-key '(normal visual motion) 'global (kbd "RET") 'linum-mode)
+(evil-define-key '(normal visual motion) prog-mode-map (kbd "RET") 'display-line-numbers-mode)
 
 (evil-set-leader '(normal visual motion operator) (kbd "<tab>"))
 
@@ -17,14 +17,6 @@
   (kbd "<leader>j") #'dove-snip-save
   (kbd "<leader>i") #'dove-paste-post
   (kbd "<leader>/") #'youdao-dictionary-search-at-point+)
-
-(evil-define-key '(normal visual motion operator) 'global (kbd "<leader>p") #'deadgrep)
-
-(evil-define-key 'emacs deadgrep-mode-map
-  (kbd "j") #'(lambda () (interactive) (deadgrep-forward))
-  (kbd "M-j") #'(lambda () (interactive) (deadgrep-forward-filename))
-  (kbd "k") #'(lambda () (interactive) (deadgrep-backward))
-  (kbd "M-k") #'(lambda () (interactive) (deadgrep-backward-filename)))
 
 (evil-define-key 'emacs occur-mode-map
   (kbd "j") #'(lambda () (interactive) (occur-next))
@@ -61,7 +53,7 @@
   (evil-window-right 1)
 )
 
-(evil-define-key '(normal visual) 'global
+(evil-define-key '(normal visual emacs) 'global
   (kbd "C-M-j") 'dove-split-window-to-down
   (kbd "C-M-k") 'evil-window-split
   (kbd "C-M-h") 'evil-window-vsplit
@@ -88,6 +80,8 @@
   (kbd "M-p") 'yank-from-kill-ring
 )
 
+(evil-define-key '(normal visual operator motion) 'global (kbd "M-u") 'evil-redo)
+
 ;; f number
 (evil-define-key '(normal visual motion) 'global
   (kbd "<f2>")   'dove-paste-post
@@ -100,8 +94,13 @@
   (kbd "<f8>")   'shell-command
   (kbd "<S-f8>") '(lambda (cmd) (interactive "sshell command to string:") (insert (shell-command-to-string cmd)))
   (kbd "<f10>")  'toggle-menu-bar-mode-from-frame
-  (kbd "<f12>")  'dws-last
+  ;; (kbd "<f12>")  'dws-last
+  (kbd "<f12>")  'lsp-describe-thing-at-point
 )
+
+;; 
+(evil-define-key '(normal visual motion ) 'global
+  (kbd "M-i") #'lsp-ivy-workspace-symbol)
 
 ;; keybindings for specific mode
 (evil-define-key '(normal visual motion) markdown-mode-map
