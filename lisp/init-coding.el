@@ -32,7 +32,7 @@
              ;; :hook ((c++-mode      . lsp-deferred))
              :commands lsp
 			 :config (setq lsp-enable-symbol-highlighting   nil
-						   lsp-enable-file-watchers         t
+						   lsp-enable-file-watchers         nil
 						   lsp-enable-on-type-formatting    nil
 						   lsp-eldoc-hook                   nil
 	                       lsp-headerline-breadcrumb-enable nil
