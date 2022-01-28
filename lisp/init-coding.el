@@ -53,6 +53,13 @@
 	                       lsp-restart                      'auto-restart
 						   lsp-idle-delay                   0.1)
 			         (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.meta")
+			         (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\Packages\\")
+			         (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\Temp\\")
+			         (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\UserSettings\\")
+			         (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\Logs\\")
+			         (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\ProjectSettings\\")
+			         (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\Resources\\")
+			         (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\GameRes\\")
                      (setq gc-cons-threshold 10240)
                      (setq read-process-output-max (* 1024 1024)
 						   )
