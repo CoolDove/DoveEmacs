@@ -27,6 +27,14 @@
  
 (setq frame-title-format (concat "emacs is almostly shit!!!" (format-time-string "    [%Y-%m-%d, %a]")))
 
+(defun dove/set-title (name)
+  (interactive "sSet new title: ")
+  "set the stupid emacs title"
+  (setq frame-title-format name))
+(with-eval-after-load 'evil
+  (evil-define-key '(normal visual motion operator) 'global (kbd "<leader>t") #'dove/set-title))
+
+
 ;; (use-package dimmer
   ;; :ensure t
   ;; :hook (after-init . dimmer-mode)
