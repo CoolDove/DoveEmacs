@@ -45,5 +45,8 @@
 
 (require 'init-counsel)
 
+(use-package nhexl-mode
+  :ensure t)
+
 
 (provide 'init-tools)

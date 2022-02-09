@@ -12,7 +12,6 @@
 (setq display-line-numbers-type 'relative)
 ;; (add-hook 'prog-mode-hook #'display-line-numbers-mode 1)
 
-
 (use-package railscasts-theme
   :ensure t
   :init (load-theme 'railscasts))

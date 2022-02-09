@@ -1,7 +1,11 @@
 (evil-define-key '(insert) 'global (kbd "<tab>") 'dove-indent)
+
 (evil-define-key '(insert) 'global (kbd "C-<backspace>") 'evil-delete-backward-word)
 
-(evil-define-key '(normal visual motion) prog-mode-map (kbd "RET") 'display-line-numbers-mode)
+(evil-define-key '(insert) 'global (kbd "C-<return>") #'(lambda () (interactive) (evil-insert-newline-above)))
+(evil-define-key '(insert) 'global (kbd "C-S-<return>") #'(lambda () (interactive) (evil-insert-newline-below)))
+
+(evil-define-key '(normal visual) prog-mode-map (kbd "RET") 'display-line-numbers-mode)
 
 (evil-set-leader '(normal visual motion operator) (kbd "<tab>"))
 
@@ -9,8 +13,6 @@
   (kbd "<leader>r") #'read-only-mode
   (kbd "<leader>g") #'magit
   (kbd "<leader>a") #'org-agenda
-  (kbd "<leader>e") #'devdocs-browser-open
-  (kbd "<leader>E") #'devdocs-browser-open-in
   (kbd "<leader>n") #'dove-set-snip-name
   (kbd "<leader>d") #'dove-set-snip-dir
   (kbd "<leader>k") #'dove-snip-save-to-target
