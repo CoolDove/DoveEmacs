@@ -12,9 +12,14 @@
 (setq display-line-numbers-type 'relative)
 ;; (add-hook 'prog-mode-hook #'display-line-numbers-mode 1)
 
-(use-package railscasts-theme
+;; (use-package railscasts-theme
+  ;; :ensure t
+  ;; :init (load-theme 'railscasts))
+
+(use-package gruvbox-theme
   :ensure t
-  :init (load-theme 'railscasts))
+  :init (load-theme 'gruvbox-dark-soft)
+        (set-cursor-color "green yellow"))
 
 (use-package smart-mode-line
   :ensure t)
@@ -43,6 +48,7 @@
 
 (with-eval-after-load 'markdown-mode
     (set-face-font 'markdown-inline-code-face "Consolas-13")
+    (set-face-font 'bold "Unifont")
     (set-face-foreground 'markdown-inline-code-face "#ea6712")
     (set-face-attribute 'markdown-inline-code-face nil :italic t)
 

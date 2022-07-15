@@ -40,4 +40,6 @@
 			  fast-but-imprecise-scrolling nil
 )
 
+(setq undo-tree-auto-save-history nil)
+
 (provide 'init-basic)

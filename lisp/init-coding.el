@@ -1,3 +1,5 @@
+(global-auto-revert-mode t)
+
 (use-package glsl-mode
   :ensure t)
 (use-package shader-mode
@@ -6,8 +8,6 @@
   (push (cons "\\.shader\\'" 'shader-mode) auto-mode-alist)
   (push (cons "\\.compute\\'" 'shader-mode) auto-mode-alist)
 )
-
-
 
 (use-package csharp-mode
   :ensure t)

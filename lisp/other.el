@@ -2,4 +2,5 @@
   (interactive)
   (insert "\n.[#]*\n[#]*[#]\n"))
 
+
 (provide 'other)

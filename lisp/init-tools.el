@@ -17,8 +17,8 @@
 ;; (use-package restart-emacs
              ;; :ensure t)
 
-;; (use-package magit
-  ;; :ensure t)
+(use-package magit
+  :ensure t)
 
 (use-package find-file-rg
   :ensure t)
