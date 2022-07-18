@@ -90,6 +90,7 @@
   (kbd "C-<f2>") 'dove-snip-save
   (kbd "<f3>")   'goto-last-change
   (kbd "C-<f3>") 'goto-last-change-reverse
+  (kbd "<f4>")   'eval-region
   (kbd "<f5>")   'eval-region
   (kbd "C-<f5>") 'eval-expression
   (kbd "<f7>")   'dove-wterminal-here

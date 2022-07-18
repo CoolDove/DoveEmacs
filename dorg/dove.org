@@ -12,7 +12,14 @@
  
 * Learn Computational Geometry
 ** DONE <2021-12-19 周日> [#A] ConvexHull                             :math:
+<<<<<<< HEAD
+** TODO <2021-12-26 周日 23:00> [#A] [偏导数 - 别看着我笑了 - bili](https://www.bilibili.com/video/BV1ar4y127eu?spm_id_from=333.999.0.0) :math:
+** TODO <2021-12-25 周六 23:00> [#A] Note Matrix & Determinant Part   :math:
+   things about calculating determinant and its meaning, use...
+** TODO <2021-12-22 周三 23:00> [#A] Signed Distance Field & 8ssedt   :math:
+=======
 ** DONE <2021-12-26 周日 23:00> [#A] [偏导数 - 别看着我笑了 - bili](https://www.bilibili.com/video/BV1ar4y127eu?spm_id_from=333.999.0.0) :math:
+>>>>>>> 345c154032cfe5628c93ef969fe7a4e6fc160cd8
 
 * Learn Something
 ** TODO <2021-12-24 周五> [#B] take a look at Plasma                  :math:
