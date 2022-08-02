@@ -1,3 +1,5 @@
+(global-auto-revert-mode t)
+
 (use-package glsl-mode
   :ensure t)
 (use-package shader-mode
@@ -14,6 +16,7 @@
 (use-package zig-mode
   :ensure t
   :config (setq zig-format-on-save nil))
+
 (use-package csharp-mode
   :ensure t)
 (use-package gdscript-mode

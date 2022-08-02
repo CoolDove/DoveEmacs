@@ -40,8 +40,8 @@
 			  fast-but-imprecise-scrolling nil
 )
 
+
 (setq w32-use-native-image-API t)
-
-
+(setq undo-tree-auto-save-history nil)
 
 (provide 'init-basic)

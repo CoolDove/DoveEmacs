@@ -52,7 +52,7 @@
  '(org-agenda-files
    '("~/.emacs.d/dorg/dove.org" "~/.emacs.d/dorg/cocowork.org" "~/.emacs.d/dorg/dove.org" "~/.emacs.d/dorg/cocowork.org"))
  '(package-selected-packages
-   '(nhexl-mode nano-theme emoji-fontset emojify cape corfu gdscript-mode lsp-mode cosmo ffmpeg-player ffmepg-player railscasts-theme jazz-theme visible-mark back-button devdocs-browser markdown-preview-eww w3m popup-kill-ring kill-ring markdown-toc csharp-mode org-bullets heaven-and-hell darkroom pdf-tools dim eldoc-box dimmer diminish auto-dim-other-buffers mosey find-file-rg web-search quick-peek zoom-window on-screen elscreen centaur-tabs magit evil-ex-shell-command goto-last-change undo-tree counsel shader-mode hlsl-mode glsl-mode deadgrep evil-mc evil-anzu dove-linum pyim youdao-dictionary use-package smooth-scroll smart-mode-line restart-emacs projectile indent-guide gruvbox-theme evil-surround company all-the-icons))
+   '(nhexl-mode cape lsp-mode cosmo railscasts-theme jazz-theme visible-mark back-button devdocs-browser markdown-preview-eww w3m popup-kill-ring kill-ring markdown-toc csharp-mode org-bullets heaven-and-hell darkroom pdf-tools dim eldoc-box dimmer diminish auto-dim-other-buffers mosey find-file-rg web-search quick-peek zoom-window on-screen elscreen centaur-tabs magit evil-ex-shell-command goto-last-change undo-tree counsel shader-mode hlsl-mode glsl-mode deadgrep evil-mc evil-anzu dove-linum pyim youdao-dictionary use-package smooth-scroll smart-mode-line restart-emacs projectile indent-guide gruvbox-theme evil-surround company all-the-icons))
  '(pos-tip-background-color "#E6DB74")
  '(pos-tip-foreground-color "#242728")
  '(safe-local-variable-values '((eval when (fboundp 'rainbow-mode) (rainbow-mode 1))))
@@ -93,4 +93,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Unifont" :foundry "outline" :slant normal :weight normal :height 151 :width normal)))))
+ '(default ((t (:family "Unifont" :foundry "outline" :slant normal :weight normal :height 151 :width normal))))
+ '(bold ((t (:weight normal :family "unifont"))))
+ '(mode-line-emphasis ((t (:family "unifont")))))

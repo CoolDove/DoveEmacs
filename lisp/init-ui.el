@@ -16,6 +16,7 @@
   ;; :ensure t
   ;; :init (load-theme 'railscasts))
 
+
 ;; (use-package darcula-theme
   ;; :ensure t
   ;; :init (load-theme 'darcula))
@@ -48,6 +49,7 @@
 
 (with-eval-after-load 'markdown-mode
     (set-face-font 'markdown-inline-code-face "Consolas-13")
+    (set-face-font 'bold "Unifont")
     (set-face-foreground 'markdown-inline-code-face "#ea6712")
     (set-face-attribute 'markdown-inline-code-face nil :italic t)
 
