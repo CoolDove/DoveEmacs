@@ -5,7 +5,7 @@
              ;; :hook ((c++-mode      . lsp-deferred))
              :commands lsp
 			 :config (setq lsp-enable-symbol-highlighting   nil
-						   lsp-enable-file-watchers         nil
+						   lsp-enable-file-watchers         t
 						   lsp-enable-on-type-formatting    nil
 						   lsp-eldoc-hook                   nil
 	                       lsp-headerline-breadcrumb-enable nil
@@ -32,7 +32,7 @@
                      (defun my-lsp-on-change-hack (orig-fun &rest args)
                          ;; do NOT run `lsp-on-change' too frequently
                          (when (> (- (float-time (current-time))
-                                     lsp-on-touch-time) 120) ;; 2 mins
+                                     lsp-on-touch-time) 30) ;; 2 mins
                          (setq lsp-on-touch-time (float-time (current-time)))
                          (apply orig-fun args)))
                      (advice-add 'lsp-on-change :around #'my-lsp-on-change-hack)

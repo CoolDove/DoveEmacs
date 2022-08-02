@@ -12,9 +12,14 @@
 (setq display-line-numbers-type 'relative)
 ;; (add-hook 'prog-mode-hook #'display-line-numbers-mode 1)
 
-(use-package railscasts-theme
-  :ensure t
-  :init (load-theme 'railscasts))
+;; (use-package railscasts-theme
+  ;; :ensure t
+  ;; :init (load-theme 'railscasts))
+
+;; (use-package darcula-theme
+  ;; :ensure t
+  ;; :init (load-theme 'darcula))
+(load-theme 'deeper-blue)
 
 (use-package smart-mode-line
   :ensure t)
@@ -24,7 +29,7 @@
 (set-face-attribute 'mode-line-inactive nil :box nil)
 (set-face-attribute 'mode-line-inactive nil :underline t)
  
-(setq frame-title-format (concat "emacs is almostly shit!!!" (format-time-string "    [%Y-%m-%d, %a]")))
+(setq frame-title-format (concat "emacs is shit!!!" (format-time-string "    [%Y-%m-%d, %a]")))
 
 (defun dove/set-title (name)
   (interactive "sSet new title: ")
@@ -49,6 +54,7 @@
     (set-face-font 'markdown-pre-face "Consolas-14")
     (set-face-foreground 'markdown-pre-face "#67ea12")
     (set-face-attribute 'markdown-pre-face nil :bold t)
+	(set-face-attribute 'markdown-table-face "Unifont")
 )
 
 ;; (require 'zone)

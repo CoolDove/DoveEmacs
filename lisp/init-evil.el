@@ -15,7 +15,9 @@
           (setq evil-auto-indent t
 		        evil-shift-width 4
 				evil-want-C-w-in-emacs-state t
-				evil-search-module 'evil-search)
+				evil-search-module 'evil-searcho)
+		  (add-hook 'evil-insert-state-entry-hook #'(lambda () (setq display-line-numbers-type t)))
+		  (add-hook 'evil-insert-state-exit-hook #'(lambda () (setq display-line-numbers-type 'relative)))
 		  (evil-set-undo-system 'undo-tree))
 		  ;; (advice-add 'evil-yank :around 'dove/evil-yank-advice))
 
