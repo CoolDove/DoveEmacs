@@ -12,6 +12,7 @@
 )
 
 
+(global-auto-revert-mode t)
 
 (use-package csharp-mode
   :ensure t)
