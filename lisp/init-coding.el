@@ -21,6 +21,8 @@
   :ensure t)
 (use-package gdscript-mode
   :ensure t)
+(use-package python-mode
+  :ensure t)
 
 (use-package company
              :hook((prog-mode) . company-mode)
