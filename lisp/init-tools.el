@@ -17,8 +17,8 @@
 ;; (use-package restart-emacs
              ;; :ensure t)
 
-;; (use-package magit
-  ;; :ensure t)
+(use-package magit
+  :ensure t)
 
 (use-package find-file-rg
   :ensure t)
@@ -45,8 +45,13 @@
 
 (require 'init-counsel)
 
+(use-package ripgrep
+  :ensure t)
+
 (use-package nhexl-mode
   :ensure t)
 
+(use-package chess
+  :ensure t)
 
 (provide 'init-tools)

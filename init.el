@@ -4,7 +4,7 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 ; set default text coding system
-(setq default-buffer-coding-system 'utf-8)
+(setq default-buffer-coding-system 'utf-8-with-signature)
 (prefer-coding-system 'utf-8)
 
 ; disable beeping
@@ -26,11 +26,9 @@
 (require 'init-evil)
 
 (require 'init-tools)
-
+ 
 (require 'init-ui)
 (require 'init-highlight)
-
-
 
 (require 'dove-org-gtd)
 

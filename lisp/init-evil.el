@@ -15,7 +15,9 @@
           (setq evil-auto-indent t
 		        evil-shift-width 4
 				evil-want-C-w-in-emacs-state t
-				evil-search-module 'evil-search)
+				evil-search-module 'evil-searcho)
+		  (add-hook 'evil-insert-state-entry-hook #'(lambda () (setq display-line-numbers-type t)))
+		  (add-hook 'evil-insert-state-exit-hook #'(lambda () (setq display-line-numbers-type 'relative)))
 		  (evil-set-undo-system 'undo-tree))
 		  ;; (advice-add 'evil-yank :around 'dove/evil-yank-advice))
 
@@ -49,8 +51,14 @@
   :config (global-anzu-mode 1))
 
 ;; Make sure that the bash executable can be found
+
 (setq explicit-shell-file-name "F:/softw/Git/bin/bash.exe")
 (setq shell-file-name explicit-shell-file-name)
 (add-to-list 'exec-path "F:/soft/Git/bin")
+
+;; (setq explicit-shell-file-name "C:/Program Files/Git/bin/bash.exe")
+;; (setq shell-file-name explicit-shell-file-name)
+;; (add-to-list 'exec-path "C:/Program Files/Git/bin")
+
 
 (provide 'init-evil)

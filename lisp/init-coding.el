@@ -1,18 +1,33 @@
+
 ;; (use-package glsl-mode
   ;; :ensure t)
+
+(global-auto-revert-mode t)
+
+(use-package glsl-mode
+  :ensure t)
+
 (use-package shader-mode
   :ensure t
   :init
+  (push (cons "\\.hlsl\\'" 'shader-mode) auto-mode-alist)
   (push (cons "\\.shader\\'" 'shader-mode) auto-mode-alist)
   (push (cons "\\.compute\\'" 'shader-mode) auto-mode-alist)
   (push (cons "\\.hlsl\\'" 'shader-mode) auto-mode-alist)
   (push (cons "\\.glsl\\'" 'shader-mode) auto-mode-alist)
+
   (push (cons "\\.vert\\'" 'shader-mode) auto-mode-alist)
   (push (cons "\\.frag\\'" 'shader-mode) auto-mode-alist)
 )
 
 
 (global-auto-revert-mode t)
+
+(require 'odin-mode)
+(use-package zig-mode
+  :ensure t
+  :config (setq zig-format-on-save nil))
+
 
 (use-package csharp-mode
   :ensure t)
