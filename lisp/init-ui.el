@@ -16,10 +16,8 @@
 (set-face-attribute  'mode-line-inactive nil :box t)
 (set-face-attribute  'mode-line-inactive nil :underline t)
 
-
 (set-face-foreground font-lock-comment-face "DarkOliveGreen4")
 
- 
 (setq frame-title-format "emacs is shit")
 
 (defun dove/set-title (name)
@@ -30,20 +28,23 @@
 (with-eval-after-load 'evil
   (evil-define-key '(normal visual motion operator) 'global (kbd "<leader>t") #'dove/set-title))
 
-;; (use-package dimmer
-  ;; :ensure t
-  ;; :hook (after-init . dimmer-mode)
-  ;; :config
-  ;; (dimmer-configure-magit)
-  ;; (dimmer-configure-posframe))
-
 (with-eval-after-load 'markdown-mode
-    (set-face-font 'markdown-inline-code-face "Consolas-13")
+    ;; (set-face-font 'markdown-inline-code-face "Consolas-13")
     (set-face-font 'bold "Unifont")
-    (set-face-foreground 'markdown-inline-code-face "#ea6712")
-    (set-face-attribute 'markdown-inline-code-face nil :italic t)
+    ;; (set-face-foreground 'markdown-inline-code-face "#ea6712")
+    ;;(set-face-attribute 'markdown-inline-code-face nil :italic t)
 
-    (set-face-font 'markdown-pre-face "Consolas-14")
+    (set-face-attribute 'markdown-pre-face nil :bold t)
+    (set-face-font 'markdown-inline-code-face "Unifont-16")
+    (set-face-font 'markdown-pre-face "Unifont-16")
+    (set-face-font 'markdown-language-keyword-face "Unifont-16")
+
+    (set-face-attribute 'markdown-header-face nil :bold t)
+    (set-face-font 'markdown-header-face "Consolas-16")
+    (set-face-font 'markdown-header-face-1 "Consolas-24")
+    (set-face-font 'markdown-header-face-2 "Consolas-20")
+    (set-face-font 'markdown-header-face-4 "Consolas-18")
+
     (set-face-foreground 'markdown-pre-face "#67ea12")
     (set-face-attribute 'markdown-pre-face nil :bold t)
 	(set-face-attribute 'markdown-table-face "Unifont")

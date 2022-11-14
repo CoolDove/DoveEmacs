@@ -4,6 +4,9 @@
 
 (global-auto-revert-mode t)
 
+(use-package markdown-mode
+  :ensure t)
+
 (use-package glsl-mode
   :ensure t)
 
