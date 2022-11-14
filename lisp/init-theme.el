@@ -1,4 +1,9 @@
+(use-package obsidian-theme
+  :ensure t)
+
 (load-theme 'whiteboard)
+;; (load-theme 'obsidian)
+
 (set-background-color "#efefea")
 (set-face-background 'region "yellowgreen")
 (evil-set-cursor-color "darkgreen")
