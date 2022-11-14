@@ -13,4 +13,26 @@
 
 ** Curve Object Instancing
 *** DONE <2021-12-19 周日> learn about convex hull algrithms           :math:
-*** TODO <2021-12-20 周一> polygon separation                          :math:
+*** DEPRECATED <2021-12-21 周二> polygon separation                    :math:
+*** DONE <2021-12-21 周二> distance to curve                           :math:
+*** DONE <2021-12-21 周二> sample tolerance                            :math:
+*** DONE <2021-12-22 周三> instancing objects                   :math:render:
+*** DONE <2021-12-24 周五> fix bug: OnSceneGUI no called
+	NOTE: remember to turn on the Gizmos button of the SceneView
+*** DONE <2021-12-24 周五> optimize SceneGUI handle
+*** DONE <2021-12-24 周五> refactoring into gametk
+**** DONE <2021-12-24 周五> on enable bug fix
+*** DONE <2021-12-24 周五> clean the var: points
+*** TODO <2021-12-24 周五> fix bug: rtcurve's curve null after starting (save to local)
+*** TODO <2021-12-24 周五> add feature: auto realloc ComputeBuffer for instancing data
+
+** Auqarium
+*** TODO <2022-01-10> rope slot
+*** TODO <2022-01-10> fix GameSystemRelease After UnityEditor closed
+*** TODO <2022-01-10> fix GameSystem multi init
+*** TODO <2022-01-10> fix player movement(outer collider)
+
+
+** Scriptable Render Pipeline
+*** DONE <2021-12-20 周一 15:00> outline pass
+

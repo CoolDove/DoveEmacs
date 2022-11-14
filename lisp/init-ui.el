@@ -15,6 +15,10 @@
 (set-face-foreground 'mode-line-inactive "darkblue")
 (set-face-attribute  'mode-line-inactive nil :box t)
 (set-face-attribute  'mode-line-inactive nil :underline t)
+
+
+(set-face-foreground font-lock-comment-face "DarkOliveGreen4")
+
  
 (setq frame-title-format "emacs is shit")
 
