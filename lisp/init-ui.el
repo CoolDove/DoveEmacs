@@ -10,7 +10,7 @@
 (use-package smart-mode-line
   :ensure t)
 
-(set-face-background 'mode-line "yellowgreen")
+(set-face-background 'mode-line "darkblue")
 (set-face-background 'mode-line-inactive "system background")
 (set-face-foreground 'mode-line-inactive "darkblue")
 (set-face-attribute  'mode-line-inactive nil :box t)

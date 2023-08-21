@@ -5,7 +5,7 @@
 (evil-define-key '(insert) 'global (kbd "C-<return>") #'(lambda () (interactive) (evil-insert-newline-above)))
 (evil-define-key '(insert) 'global (kbd "C-S-<return>") #'(lambda () (interactive) (evil-insert-newline-below)))
 
-(evil-define-key '(normal visual) prog-mode-map (kbd "RET") 'display-line-numbers-mode)
+(evil-define-key '(normal visual) prog-mode-map (kbd "C-S-l") 'display-line-numbers-mode)
 
 (evil-set-leader '(normal visual motion operator) (kbd "<tab>"))
 
@@ -28,8 +28,8 @@
 (evil-define-key '(normal visual motion) 'global
   (kbd "C-l") 'evil-end-of-line
   (kbd "C-h") 'evil-beginning-of-line
-  (kbd "C-j") 'evil-scroll-down
-  (kbd "C-k") 'evil-scroll-up
+  (kbd "C-d") 'evil-scroll-down
+  (kbd "C-u") 'evil-scroll-up
   (kbd "M-j") 'evil-scroll-line-down
   (kbd "M-k") 'evil-scroll-line-up
   (kbd "L")   'evil-forward-word-begin
@@ -41,6 +41,7 @@
 ; split a new line
 (evil-define-key 'normal 'global
   (kbd "K") '(lambda () (interactive) (insert-char 10 1)))
+
 
 ;; split windows
 (defun dove-split-window-to-down ()
@@ -117,4 +118,3 @@
   (kbd "M-r") #'anzu-query-replace-regexp)
 
 (provide 'dove-evil-key)
-
