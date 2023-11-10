@@ -1,8 +1,10 @@
 ;; (use-package obsidian-theme
   ;; :ensure t)
+(use-package gruvbox-theme
+  :ensure t)
+(load-theme 'gruvbox-dark-hard)
 
 ;; (load-theme 'whiteboard)
-;; (load-theme 'obsidian)
 
 ;; (set-background-color "#efefea")
 ;; (set-face-background 'region "yellowgreen")
@@ -20,7 +22,7 @@
 ;; ====================
 ;; J Blow's Emacs Theme
 ;; ====================
-
+;; 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.

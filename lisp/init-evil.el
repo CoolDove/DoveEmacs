@@ -21,6 +21,13 @@
 		  (evil-set-undo-system 'undo-tree))
 		  ;; (advice-add 'evil-yank :around 'dove/evil-yank-advice))
 
+(use-package evil-snipe
+  :ensure t)
+(evil-snipe-mode +1)
+(evil-snipe-override-mode +1)
+(evil-define-key '(normal motion) evil-snipe-local-mode-map
+  "s" 'evil-snipe-s
+  "S" 'evil-snipe-S)
 (use-package undo-tree
   :after (evil)
   :ensure t
