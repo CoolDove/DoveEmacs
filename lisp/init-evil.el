@@ -33,6 +33,11 @@
   :hook   (evil-local-mode . evil-surround-mode)
 )
 
+(use-package evil-snipe
+  :ensure t
+  :config (evil-snipe-mode +1) (evil-snipe-override-mode +1) (setq evil-snipe-scope 'buffer)
+)
+
 (evil-set-cursor-color "green yellow")
 
 ;; (setq
