@@ -15,8 +15,14 @@
                 lsp-completion-show-detail       nil
                 lsp-lens-auto-enable             nil
                 ;; if you work with Projectile/project.el this will help find the ols.json file.
-                lsp-auto-guess-root              t
-))
+                lsp-auto-guess-root              t)
+  (eval-after-load 'evil
+	(evil-define-key '(normal insert visual) 'global
+	  (kbd "<f12>")   'lsp-find-definition
+	  (kbd "S-<f12>") 'lsp-find-references
+	  (kbd "M-<f12>") 'lsp-find-declaration
+	  (kbd "C-<f12>") 'lsp-find-implementation))
+)
 (defun dove-config-lsp-odin ()
   "Config lsp client odin."
   (add-to-list 'lsp-language-id-configuration '(odin-mode . "odin"))
