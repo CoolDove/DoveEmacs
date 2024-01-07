@@ -24,9 +24,8 @@
   :after  (evil)
   :ensure t
   :init (evil-snipe-mode)
-          (generate-new-buffer "HelloDove")
-          (evil-snipe-override-mode)
-          (setq evil-snipe-scope 'buffer)
+        (evil-snipe-override-mode)
+        (setq evil-snipe-scope 'buffer)
 )
 
 (use-package evil-anzu
