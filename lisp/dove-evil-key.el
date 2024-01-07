@@ -11,14 +11,7 @@
 
 (evil-define-key '(normal visual motion insert operator) 'global
   (kbd "<leader>r") #'read-only-mode
-  (kbd "<leader>g") #'magit
-  (kbd "<leader>a") #'org-agenda
-  (kbd "<leader>n") #'dove-set-snip-name
-  (kbd "<leader>d") #'dove-set-snip-dir
-  (kbd "<leader>k") #'dove-snip-save-to-target
-  (kbd "<leader>j") #'dove-snip-save
-  (kbd "<leader>i") #'dove-paste-post
-  (kbd "<leader>/") #'youdao-dictionary-search-at-point+)
+  (kbd "<leader>g") #'magit)
 
 (evil-define-key 'emacs occur-mode-map
   (kbd "j") #'(lambda () (interactive) (occur-next))

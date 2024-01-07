@@ -26,6 +26,7 @@
 
 (global-auto-revert-mode t)
 
+
 (require 'odin-mode)
 (use-package zig-mode
   :ensure t
