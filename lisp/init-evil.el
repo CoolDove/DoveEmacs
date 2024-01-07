@@ -1,13 +1,3 @@
-;; (require 'pulse)
-;; (defface dove/evil-yank-flash
-  ;; '((t :background "orange"))
-  ;; "evil yank flash")
-
-;; (defun dove/evil-yank-advice (orig-fn beg end &rest args)
-  ;; (if (not (eq evil-state 'visual))
-      ;; (pulse-momentary-highlight-region beg end 'dove/evil-yank-flash))
-  ;; (apply orig-fn beg end args))
-
 (use-package evil
   :init   (evil-mode 1)
   :ensure t
@@ -19,12 +9,9 @@
 		  (add-hook 'evil-insert-state-entry-hook #'(lambda () (setq display-line-numbers-type t)))
 		  (add-hook 'evil-insert-state-exit-hook #'(lambda () (setq display-line-numbers-type 'relative)))
 		  (evil-set-undo-system 'undo-tree)
-          (evil-set-initial-state 'eshell-mode 'emacs))
-
-(use-package undo-tree
-  :after (evil)
-  :ensure t
-  :hook (evil-local-mode . turn-on-undo-tree-mode))
+          (evil-set-initial-state 'eshell-mode 'emacs)
+          (evil-set-initial-state 'xref--xref-buffer-mode 'emacs)
+          (evil-set-cursor-color "green yellow"))
 
 (use-package evil-surround
   :ensure t
@@ -42,19 +29,15 @@
           (setq evil-snipe-scope 'buffer)
 )
 
-(evil-set-cursor-color "green yellow")
-
 (use-package evil-anzu
   :ensure t
   :after (evil)
   :hook (evil-local-mode . anzu-mode)
   :config (global-anzu-mode 1))
 
-;; Make sure that the bash executable can be found
-
-;; (setq explicit-shell-file-name "C:/Program Files/Git/bin/bash.exe")
-;; (setq shell-file-name explicit-shell-file-name)
-;; (add-to-list 'exec-path "C:/Program Files/Git/bin")
-
+(use-package undo-tree
+  :after (evil)
+  :ensure t
+  :hook (evil-local-mode . turn-on-undo-tree-mode))
 
 (provide 'init-evil)

@@ -40,8 +40,9 @@
 			  fast-but-imprecise-scrolling nil
 )
 
-
 (setq w32-use-native-image-API t)
 (setq undo-tree-auto-save-history nil)
+
+(global-unset-key (kbd "<f1> h")) ;; Why do you have this shit.
 
 (provide 'init-basic)

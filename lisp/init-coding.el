@@ -58,6 +58,7 @@
 
 ;; (require 'init-corfu)
 
-;; (require 'init-lsp)
+(require 'init-lsp)
+
 
 (provide 'init-coding)
