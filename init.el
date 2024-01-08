@@ -34,6 +34,8 @@
 
 (require 'other)
 
+(require 'init-dove)
+
 (server-start)
 
 (put 'narrow-to-region 'disabled nil)

@@ -26,6 +26,7 @@
 
 (global-auto-revert-mode t)
 
+
 (require 'odin-mode)
 (use-package zig-mode
   :ensure t
@@ -57,6 +58,7 @@
 
 ;; (require 'init-corfu)
 
-;; (require 'init-lsp)
+(require 'init-lsp)
+
 
 (provide 'init-coding)

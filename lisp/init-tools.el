@@ -1,18 +1,28 @@
-;; (use-package goto-last-change
-  ;; :ensure t)
-
-;; (use-package youdao-dictionary
-  ;; :defer 2
-  ;; :ensure t
-  ;; :config(setq url-automatic-caching t))
-
-(use-package counsel
+(use-package goto-last-change
   :ensure t)
 
 (use-package ivy
              :ensure t
              :diminish ivy-mode
              :hook (after-init . ivy-mode))
+
+(use-package ivy-xref
+            :ensure t
+			:init
+				;; xref initialization is different in Emacs 27 - there are two different
+				;; variables which can be set rather than just one
+				(when (>= emacs-major-version 27)
+					(setq xref-show-definitions-function #'ivy-xref-show-defs))
+				;; Necessary in Emacs <27. In Emacs 27 it will affect all xref-based
+				;; commands other than xref-find-definitions (e.g. project-find-regexp)
+				;; as well
+				(setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
+            :after (ivy))
+
+(use-package counsel
+  :ensure t
+  :init (require 'init-counsel)
+  :after (ivy))
 
 ;; (use-package restart-emacs
              ;; :ensure t)
@@ -26,24 +36,7 @@
 (evil-define-key '(normal visual motion emacs) 'global
   (kbd "C-x C-p") #'find-file-rg)
 
-;; (require 'dove-web-search)
-;; (setq eww-search-prefix "https://www.bing.com/search?q=")
-
 (require 'init-deadgrep)
-
-;; (use-package org-bullets
-  ;; :ensure t
-  ;; :hook (org-mode . (lambda () (org-bullets-mode 1))))
-
-(defun dove-wterminal-here (dir)
-  (interactive "Dwterminal at: ")
-  (shell-command (concat "wt.exe -w 0 nt --tabColor \"#7ccf32\" -d " dir)))
-
-;; (require 'snipaste)
-
-(evil-set-initial-state 'eshell-mode 'emacs)
-
-(require 'init-counsel)
 
 (use-package ripgrep
   :ensure t)
@@ -51,7 +44,12 @@
 (use-package nhexl-mode
   :ensure t)
 
-(use-package chess
-  :ensure t)
+;; (use-package chess
+  ;; :ensure t)
+
+
+(setq explicit-shell-file-name "bash"
+	  explicit-bash-args '("--login" "-i"))
+(setq shell-file-name explicit-shell-file-name)
 
 (provide 'init-tools)
