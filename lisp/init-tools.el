@@ -24,8 +24,8 @@
   :init (require 'init-counsel)
   :after (ivy))
 
-;; (use-package restart-emacs
-             ;; :ensure t)
+(use-package restart-emacs
+             :ensure t)
 
 (use-package magit
   :ensure t)

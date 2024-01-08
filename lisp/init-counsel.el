@@ -1,6 +1,3 @@
-;; (use-package counsel
-  ;; :ensure t)
-
 (evil-define-key '(normal visual insert motion emacs) 'global
     (kbd "C-x C-f") #'counsel-find-file
     (kbd "M-x") #'counsel-M-x)
@@ -20,10 +17,6 @@
 )
 (evil-define-key '(normal visual emacs) prog-mode-map
     (kbd "/") #'swiper)
-
-(evil-define-key '(normal visual) 'global
-  (kbd "<leader>v") #'ivy-push-view
-  (kbd "<leader>b") #'ivy-switch-view)
 
 (evil-define-key '(normal visual) markdown-mode-map
   (kbd "<leader>t") #'counsel-outline)

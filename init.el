@@ -30,11 +30,9 @@
 (require 'init-ui)
 (require 'init-highlight)
 
-(require 'dove-org-gtd)
-
-(require 'other)
-
 (require 'init-dove)
+(require 'dove-cody)
+(require 'dove-make)
 
 (server-start)
 
