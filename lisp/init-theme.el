@@ -1,26 +1,13 @@
 ;; (use-package obsidian-theme
   ;; :ensure t)
-
-;; (load-theme 'whiteboard)
-;; (load-theme 'obsidian)
-
-;; (set-background-color "#efefea")
-;; (set-face-background 'region "yellowgreen")
-;; (evil-set-cursor-color "darkgreen")
-;; 
-;; (set-face-attribute 'line-number-current-line nil :bold t)
-;; (set-face-attribute 'line-number-current-line nil :underline t)
-;; 
-;; (set-face-background 'line-number "#e0e2e0")
-;; (set-face-background 'line-number-current-line "#efbb23")
-;; (set-face-foreground 'line-number-current-line "#1133ef")
-
-
+(use-package gruvbox-theme
+  :ensure t)
+(load-theme 'gruvbox-dark-hard)
 
 ;; ====================
 ;; J Blow's Emacs Theme
 ;; ====================
-
+;; 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -31,7 +18,7 @@
  '(custom-variable-tag-face ((t (:underline t :foreground "lightblue"))) t)
  '(font-lock-builtin-face ((t nil)))
  ; '(font-lock-comment-face ((t (:foreground "yellow"))))
- '(font-lock-comment-face ((t (:foreground "#3fdflf"))))
+ '(font-lock-comment-face ((t (:foreground "#00df3f"))))
  '(font-lock-function-name-face ((((class color) (background dark)) (:foreground "white")))) 
  '(font-lock-keyword-face ((t (:foreground "white" ))))
  ; '(font-lock-string-face ((t (:foreground "gray160" :background "gray16"))))
@@ -44,6 +31,8 @@
  '(region ((t (:background "blue"))))
  '(widget-field-face ((t (:foreground "white"))) t)
  '(widget-single-line-field-face ((t (:background "darkgray"))) t))
+
+
 
 (global-font-lock-mode 1)
 (set-cursor-color "lightgreen")

@@ -1,13 +1,3 @@
-(use-package lsp-mode
-  :ensure t
-  :commands lsp
-  :hook ((odin-mode . lsp) (csharp-mode . lsp))
-  :init (setq lsp-keymap-prefix "C-c l")
-  :config
-    (dove-config-lsp)
-	(dove-config-lsp-odin)
-)
-
 (defun dove-config-lsp ()
   "Config lsp."
   (setq-default lsp-headerline-breadcrumb-enable nil
@@ -33,6 +23,16 @@
     :server-id 'ols
     :multi-root t)) ;; This is just so lsp-mode sends the "workspaceFolders" param to the server.
   (add-hook 'odin-mode-hook #'lsp)
+)
+
+(use-package lsp-mode
+  :ensure t
+  :commands lsp
+  :hook ((odin-mode . lsp) (csharp-mode . lsp))
+  :init (setq lsp-keymap-prefix "C-c l")
+  :config
+    (dove-config-lsp)
+	(dove-config-lsp-odin)
 )
 
 (use-package lsp-ivy
