@@ -47,7 +47,6 @@
 ;; (use-package chess
   ;; :ensure t)
 
-
 (setq explicit-shell-file-name "bash"
 	  explicit-bash-args '("--login" "-i"))
 (setq shell-file-name explicit-shell-file-name)

@@ -16,6 +16,7 @@
 	(kbd "C-x b") #'counsel-switch-buffer
 
     (kbd "C-'") #'counsel-evil-registers
+    (kbd "M-m") #'counsel-bookmark
     (kbd "<leader> m") #'counsel-evil-marks
 )
 (evil-define-key '(normal visual emacs) prog-mode-map
