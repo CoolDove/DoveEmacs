@@ -24,17 +24,33 @@
 
 (defun dmk--get-targets-from-project-makefile ()
   "Get targets."
-  (dmk--get-targets-in-makefile (dmk--read-project-makefile))
+  (let ((source (dmk--read-project-makefile)))
+	(if source
+		(dmk--get-targets-in-makefile source)
+	    nil
+	)
+  )
 )
 
 (defun dove-counsel-make ()
   "Ivy Makefile targets."
   (interactive)
-  (let ((targets (dmk--get-targets-from-project-makefile)) (default-directory (vc-root-dir)))
+  (let ((targets (dmk--get-targets-from-project-makefile)))
 	(if targets
-		(ivy-read "Make:" targets :action (lambda (x) (shell-command (concat "make " x))))
+		(ivy-read "Make:" targets :action (lambda (x) (dove-make (vc-root-dir) x)))
 		(message "Invalid Makefile.")
 	)
+  )
+)
+
+(defun dove-make (directory target)
+  "Make target"
+  (let ((default-directory directory))
+	(call-process "make" nil "*make*" nil target)
+	(with-current-buffer "*make*"
+	  (message (buffer-string))
+	)
+	(kill-buffer "*make*")
   )
 )
 

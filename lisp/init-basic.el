@@ -38,11 +38,18 @@
 			  mouse-wheel-progressive-speed nil
 			  mouse-wheel-follow-mouse 't
 			  fast-but-imprecise-scrolling nil
+
+			  tab-always-indent nil
+			  tab-width         4
 )
 
 (setq w32-use-native-image-API t)
 (setq undo-tree-auto-save-history nil)
 
 (global-unset-key (kbd "<f1> h")) ;; Why do you have this shit.
+
+(add-to-list 'exec-path "D:/softw/toolkit")
+(add-to-list 'exec-path "E:/softw/msys2/usr/bin")
+(add-to-list 'exec-path "D:/softw/msys2/usr/bin")
 
 (provide 'init-basic)

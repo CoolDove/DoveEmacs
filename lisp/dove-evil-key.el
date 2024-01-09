@@ -1,4 +1,4 @@
-(evil-define-key '(insert) 'global (kbd "<tab>") 'dove-indent)
+;; (evil-define-key '(insert) 'global (kbd "<tab>") 'dove-indent)
 
 (evil-define-key '(insert) 'global (kbd "C-<backspace>") 'evil-delete-backward-word)
 
