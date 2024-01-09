@@ -6,11 +6,6 @@
   ;; (font-lock-add-keywords nil '(("\\(@[A-Za-z][A-Za-z]*:\\)"  1 '(:background "#e66735" :foreground "#2d3743" :box t) t)))
 ;; )
 
-;; (defun dove-company-highlight-terminal ()
-  ;; "adjust highlight for company mode in terminal"
-  ;; (set-face-background 'company-tooltip "darkgray")
-;; )
-
 ;; (if (display-graphic-p)
 	;; ; GUI highlight
 	;; (progn
