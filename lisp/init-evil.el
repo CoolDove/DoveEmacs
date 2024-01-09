@@ -13,30 +13,31 @@
           ;; (evil-set-cursor-color "green yellow")
 		  (require 'dove-evil-key))
 
-;; (use-package evil-surround
-  ;; :ensure t
-  ;; :after  (evil)
-  ;; :config (evil-surround-mode 1)
-  ;; :hook   (evil-local-mode . evil-surround-mode)
-;; )
-;; 
-;; (use-package evil-snipe
-  ;; :after  (evil)
-  ;; :ensure t
-  ;; :init (evil-snipe-mode)
-        ;; (evil-snipe-override-mode)
-        ;; (setq evil-snipe-scope 'buffer)
-;; )
-;; 
-;; (use-package evil-anzu
-  ;; :ensure t
-  ;; :after (evil)
-  ;; :hook (evil-local-mode . anzu-mode)
-  ;; :config (global-anzu-mode 1))
+(use-package evil-surround
+  :ensure t
+  :after  (evil)
+  :config (evil-surround-mode 1)
+  :hook   (evil-local-mode . evil-surround-mode)
+)
 
-;; (use-package undo-tree
-  ;; :after (evil)
-  ;; :ensure t
-  ;; :hook (evil-local-mode . turn-on-undo-tree-mode))
+(use-package evil-snipe
+  :after  (evil)
+  :ensure t
+  :init (evil-snipe-mode)
+        (evil-snipe-override-mode)
+        (setq evil-snipe-scope 'buffer)
+)
+
+(use-package evil-anzu
+  :ensure t
+  :after (evil)
+  :hook (evil-local-mode . anzu-mode)
+  :config (global-anzu-mode 1))
+
+(use-package undo-tree
+  :after (evil)
+  :ensure t
+  :hook (evil-local-mode . turn-on-undo-tree-mode))
+
 
 (provide 'init-evil)

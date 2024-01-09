@@ -50,9 +50,11 @@
 	(set-face-foreground 'company-tooltip-common "darkgray")
    ))
 
-   (set-face-background 'mode-line "red")
+   (set-face-background 'mode-line "blue")
    (set-face-foreground 'mode-line-inactive "darkgray")
    (set-face-background 'mode-line-inactive "black")
+
+   (eval-after-load 'swiper '(set-face-background 'swiper-line-face "blue"))
 )
 
 (if (display-graphic-p)

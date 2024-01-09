@@ -1,4 +1,3 @@
-
 (defun dmk--read-project-makefile ()
   "Read makefile by vc."
   (let ((root (vc-root-dir)))
