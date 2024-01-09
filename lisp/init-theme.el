@@ -49,6 +49,10 @@
 	(set-face-foreground 'company-tooltip-annotation "brown")
 	(set-face-foreground 'company-tooltip-common "darkgray")
    ))
+
+   (set-face-background 'mode-line "red")
+   (set-face-foreground 'mode-line-inactive "darkgray")
+   (set-face-background 'mode-line-inactive "black")
 )
 
 (if (display-graphic-p)
