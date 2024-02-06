@@ -52,4 +52,14 @@
 (add-to-list 'exec-path "E:/softw/msys2/usr/bin")
 (add-to-list 'exec-path "D:/softw/msys2/usr/bin")
 
+
+(defun dove--scratch-buffer-replace ()
+  "EMACS YOU DESTROIED MY LIFE"
+  (with-current-buffer "*scratch*"
+	    (erase-buffer)
+	    (insert "EMACS, YOU DESTROIED MY LIFE."))
+)
+
+(add-hook 'after-init-hook 'dove--scratch-buffer-replace)
+
 (provide 'init-basic)

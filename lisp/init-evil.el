@@ -7,9 +7,9 @@
 				evil-search-module 'evil-searcho)
 		  (add-hook 'evil-insert-state-entry-hook #'(lambda () (setq display-line-numbers-type t)))
 		  (add-hook 'evil-insert-state-exit-hook #'(lambda () (setq display-line-numbers-type 'relative)))
-		  ;; (evil-set-undo-system 'undo-tree)
-          ;; (evil-set-initial-state 'eshell-mode 'emacs)
-          ;; (evil-set-initial-state 'xref--xref-buffer-mode 'emacs)
+		  (evil-set-undo-system 'undo-tree)
+          (evil-set-initial-state 'eshell-mode 'emacs)
+          (evil-set-initial-state 'xref--xref-buffer-mode 'emacs)
           ;; (evil-set-cursor-color "green yellow")
 		  (require 'dove-evil-key))
 
